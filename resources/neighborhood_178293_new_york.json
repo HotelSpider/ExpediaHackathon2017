@@ -1,0 +1,135 @@
+var neighborhoodNewYork = [
+  {
+    "lat": 40.81831955,
+    "lng": -73.94539718,
+    "type": "neighborhood",
+    "id": "112757",
+    "name": "Harlem, New York, New York, United States of America (Type 1)"
+  },
+  {
+    "lat": 40.78699,
+    "lng": -73.9753,
+    "type": "neighborhood",
+    "id": "800075",
+    "name": "Upper West Side, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.77842,
+    "lng": -73.9565,
+    "type": "neighborhood",
+    "id": "800076",
+    "name": "Upper East Side, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.75905625,
+    "lng": -73.98450825,
+    "type": "neighborhood",
+    "id": "800077",
+    "name": "Broadway - Times Square, New York, New York, United States of America (type 5)"
+  },
+  {
+    "lat": 40.70686,
+    "lng": -74.01019,
+    "type": "neighborhood",
+    "id": "800081",
+    "name": "Wall Street - Financial District, New York, United States of America (type 5)"
+  },
+  {
+    "lat": 40.77429,
+    "lng": -73.872035,
+    "type": "neighborhood",
+    "id": "800082",
+    "name": "LaGuardia Airport (LGA), New York, United States of America (type 4)"
+  },
+  {
+    "lat": 40.644166,
+    "lng": -73.782548,
+    "type": "neighborhood",
+    "id": "800083",
+    "name": "John F. Kennedy International Airport (JFK), New York, United States of America (type 4)"
+  },
+  {
+    "lat": 40.76582,
+    "lng": -73.97626,
+    "type": "neighborhood",
+    "id": "6056463",
+    "name": "Central Park, New York, New York, United States of America (type 7)"
+  },
+  {
+    "lat": 40.69085,
+    "lng": -74.17747,
+    "type": "neighborhood",
+    "id": "6056468",
+    "name": "Newark Liberty International Airport (EWR), New Jersey, United States of America (type 4)"
+  },
+  {
+    "lat": 40.64281,
+    "lng": -73.95202,
+    "type": "neighborhood",
+    "id": "6056496",
+    "name": "Brooklyn, New York, United States of America (type 3)"
+  },
+  {
+    "lat": 40.57664567,
+    "lng": -74.14508655,
+    "type": "neighborhood",
+    "id": "6126091",
+    "name": "Staten Island, New York, United States of America (type 3)"
+  },
+  {
+    "lat": 40.76326803,
+    "lng": -73.99555863,
+    "type": "neighborhood",
+    "id": "6141524",
+    "name": "Midtown West, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.75142534,
+    "lng": -73.9728319,
+    "type": "neighborhood",
+    "id": "6141525",
+    "name": "Midtown East - Grand Central, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.73919731,
+    "lng": -74.00107509,
+    "type": "neighborhood",
+    "id": "6142489",
+    "name": "Chelsea, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.73558701,
+    "lng": -73.98126941,
+    "type": "neighborhood",
+    "id": "6142495",
+    "name": "Union Square, New York, New York, United States of America (type 1)"
+  },
+  {
+    "lat": 40.71856488,
+    "lng": -73.98714817,
+    "type": "neighborhood",
+    "id": "6142500",
+    "name": "East Village - Lower East Side, New York, United States of America (type 5)"
+  },
+  {
+    "lat": 40.72195907,
+    "lng": -74.00697639,
+    "type": "neighborhood",
+    "id": "6142503",
+    "name": "SoHo - Tribeca, New York, United States of America (type 5)"
+  },
+  {
+    "lat": 40.751479,
+    "lng": -73.993644,
+    "type": "neighborhood",
+    "id": "6291778",
+    "name": "Madison Square Garden, New York, New York, United States of America (type 7)"
+  },
+  {
+    "lat": 40.74611625,
+    "lng": -73.93872375,
+    "type": "neighborhood",
+    "id": "6344850",
+    "name": "Long Island City, New York, United States of America (type 3)"
+  }
+];

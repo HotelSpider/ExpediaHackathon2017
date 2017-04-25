@@ -10,7 +10,8 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
 ]);
 
 ExpediaHackathonAPP
-    .run(function ($rootScope, $location, $http, $uibModal, $interval) {
+
+    .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout) { 
         
         
         $rootScope.featuredAmenityEnum = [
@@ -89,10 +90,202 @@ ExpediaHackathonAPP
         'Sea Facing',
         'Slope side',
         'Tower' ];
+
+        var autocomplete;
+
+        $rootScope.PhysicalContact = {
+            Addresses : {
+                Address :[
+                    {}
+                ]
+            }
+        };
+
+        $rootScope.neighborhood = 'aaa';
+
+        $rootScope.activitiesFound = [];
+
+        $rootScope.POIFound = [];
+        $rootScope.fillInAddress = function(type){
         
+            $('.physicalautocompleteresult').hide();
+            var place = autocomplete.getPlace();
+            var address = place.address_components;
+            $rootScope.PhysicalContact.Addresses.Address[0].Latitude = place.geometry.location.lat().toString();
+            $rootScope.PhysicalContact.Addresses.Address[0].Longitude = place.geometry.location.lng().toString();
+        
+            $rootScope.PhysicalContact.Addresses.Address[0].AddressLine = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].StreetNmbr = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].County = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].CityName = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].StateProv  = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].CountryCode  = '';
+            $rootScope.PhysicalContact.Addresses.Address[0].PostalCode  = '';
+
+            angular.forEach( address, function(item, key){
+                if( item.types[0] == 'route' )
+                    $rootScope.PhysicalContact.Addresses.Address[0].AddressLine = item.long_name;
+                else if( item.types[0] == 'street_number' )
+                    $rootScope.PhysicalContact.Addresses.Address[0].StreetNmbr = item.long_name;
+                else if( item.types[0] == 'administrative_area_level_2' ) {
+                    $rootScope.displayWarningCountyPhysical = item.long_name.length > 32;
+                    $rootScope.PhysicalContact.Addresses.Address[0].County = item.long_name.substr(0, 32);
+                }
+                else if( item.types[0] == 'locality' )
+                    $rootScope.PhysicalContact.Addresses.Address[0].CityName = item.long_name;
+                else if( item.types[0] == 'administrative_area_level_1' )
+                    $rootScope.PhysicalContact.Addresses.Address[0].StateProv = item.long_name;
+                else if( item.types[0] == 'country' ){
+                    $rootScope.PhysicalContact.Addresses.Address[0].CountryCode = item.short_name;
+                }else if( item.types[0] == 'postal_code' )
+                    $rootScope.PhysicalContact.Addresses.Address[0].PostalCode = item.long_name;
+            });
+           
+            $rootScope.getTCSInformation();
+            $rootScope.getGooglePOI();
+
+            console.log($rootScope.activitiesFound);
+
+            console.log($rootScope.POIFound);
+
+            $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
+
+        };
+            
+        $rootScope.initializePhysicalAutoComplete = function() {
+            autocomplete = new google.maps.places.Autocomplete(
+                (document.getElementById('physicalautocomplete')),
+                { types: ['geocode'] }
+            );
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                $rootScope.fillInAddress('Physical');
+            });
+
+            $timeout( function() {
+                $('#physicalautocomplete').attr('autocomplete', 'false');
+            }, 1000);
+        };
+
+        $rootScope.getTCSInformation = function(){
+
+            //Utils (source http://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
+            function degreesToRadians(degrees) {
+                return degrees * Math.PI / 180;
+            }
+
+            function distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {
+                var earthRadiusKm = 6371;
+
+                var dLat = degreesToRadians(lat2-lat1);
+                var dLon = degreesToRadians(lon2-lon1);
+
+                lat1 = degreesToRadians(lat1);
+                lat2 = degreesToRadians(lat2);
+
+                var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                return earthRadiusKm * c;
+            }
+            //First identify the correct neighboorhood
+            //Classify
+            
+            var neighboorhoodsParis = [],
+                neighboorhoodsMadrid = [],
+                neighboorhoodsNewYork = [];
+
+            var neighborhoodFound = null;
+            var city = 'Madrid';
+            var minDistance = -1;
+            var Address = $rootScope.PhysicalContact.Addresses.Address[0];
+
+            angular.forEach(neighborhoodMadrid, function(neighborhood, indexNeighborhood){
+                var currentDistance = distanceInKmBetweenEarthCoordinates(parseFloat(Address.Latitude), parseFloat(Address.Longitude), parseFloat(neighborhood.lat), parseFloat(neighborhood.lng));
+                if(minDistance < 0 || minDistance > currentDistance){
+                    minDistance = currentDistance;
+                    neighborhoodFound = neighborhood;
+                    city = 'Madrid';
+                }
+            });
+
+
+            angular.forEach(neighborhoodParis, function(neighborhood, indexNeighborhood){
+                var currentDistance = distanceInKmBetweenEarthCoordinates(parseFloat(Address.Latitude), parseFloat(Address.Longitude), parseFloat(neighborhood.lat), parseFloat(neighborhood.lng));
+                if(minDistance < 0 || minDistance > currentDistance){
+                    minDistance = currentDistance;
+                    neighborhoodFound = neighborhood;
+                    city = 'Paris';
+                }
+            });
+
+            angular.forEach(neighborhoodNewYork, function(neighborhood, indexNeighborhood){
+                var currentDistance = distanceInKmBetweenEarthCoordinates(parseFloat(Address.Latitude), parseFloat(Address.Longitude), parseFloat(neighborhood.lat), parseFloat(neighborhood.lng));
+                if(minDistance < 0 || minDistance > currentDistance){
+                    minDistance = currentDistance;
+                    neighborhoodFound = neighborhood;
+                    city = 'NewYork';
+                }
+            });
+
+            $rootScope.neighborhood = neighborhoodFound;
+
+            //Get the TCS Activities
+            $http({
+                method:'GET',
+                url:'https://services.expediapartnercentral.com/travel-content/service/travel/id/'+$rootScope.neighborhood.id+'?section=ACTIVITY&langId=EN&version=2&useCache=true'
+            }).then(function(activities, status){
+
+                 //Load the activities for the particular neighboorhood
+                var activitiesDb;
+
+                if(city == 'Madrid'){
+                    activitiesDb = activitiesMadrid;
+                }else if (city == 'Paris'){
+                    activitiesDb = activitiesMadrid;
+                }else if(city == 'NewYork'){          
+                    activitiesDb = activitiesNewYork;
+                }
+
+                //array id => activity
+                var cityActivities = {};
+                var activitiesFound = [];
+                angular.forEach(activitiesDb, function(activity, indexActivity){
+                    cityActivities[activity.id] = activity;
+                });
+
+                angular.forEach(activities.data.sections.data, function(activity, indexActivity){
+                    if(typeof data.activity_id != 'undefined'){
+                        activitiesFound.push(cityActivities[activity.sections.activity.id]);
+                    }                
+                });
+
+                $rootScope.activitiesFound = activitiesFound;
+            });
+
+           
+
+
+        };
+
+        $rootScope.getGooglePOI = function(){
+
+            $http({
+                method:'GET',
+                url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.868496526,2.304498782&radius=500&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU',
+                 headers: {
+                'Authorization': undefined
+            }
+            }).then(function(response, status){
+                console.log(response);
+            });
+
+        };
+
+        $timeout( function(){
+            $rootScope.initializePhysicalAutoComplete();
+        }, 1000);
     })
     .config(function($httpProvider, $base64) {
-        var auth = $base64.encode("foo:bar");
+        var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
     .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging',
@@ -153,77 +346,7 @@ ExpediaHackathonAPP
             console.info('onCompleteAll');
         };
 
-        var autocomplete;
-
-        $scope.PhysicalContact = {
-            Addresses : {
-                Address :[
-                    {}
-                ]
-            }
-        };
-
         console.info('uploader', uploader);
-
-        $scope.fillInAddress = function(type){
-        
-            $('.physicalautocompleteresult').hide();
-            var place = autocomplete.getPlace();
-            var address = place.address_components;
-            $scope.PhysicalContact.Addresses.Address[0].Latitude = place.geometry.location.lat().toString();
-            $scope.PhysicalContact.Addresses.Address[0].Longitude = place.geometry.location.lng().toString();
-        
-            $scope.PhysicalContact.Addresses.Address[0].AddressLine = '';
-            $scope.PhysicalContact.Addresses.Address[0].StreetNmbr = '';
-            $scope.PhysicalContact.Addresses.Address[0].County = '';
-            $scope.PhysicalContact.Addresses.Address[0].CityName = '';
-            $scope.PhysicalContact.Addresses.Address[0].StateProv  = '';
-            $scope.PhysicalContact.Addresses.Address[0].CountryCode  = '';
-            $scope.PhysicalContact.Addresses.Address[0].PostalCode  = '';
-
-            angular.forEach( address, function(item, key){
-                if( item.types[0] == 'route' )
-                    $scope.PhysicalContact.Addresses.Address[0].AddressLine = item.long_name;
-                else if( item.types[0] == 'street_number' )
-                    $scope.PhysicalContact.Addresses.Address[0].StreetNmbr = item.long_name;
-                else if( item.types[0] == 'administrative_area_level_2' ) {
-                    $scope.displayWarningCountyPhysical = item.long_name.length > 32;
-                    $scope.PhysicalContact.Addresses.Address[0].County = item.long_name.substr(0, 32);
-                }
-                else if( item.types[0] == 'locality' )
-                    $scope.PhysicalContact.Addresses.Address[0].CityName = item.long_name;
-                else if( item.types[0] == 'administrative_area_level_1' )
-                    $scope.PhysicalContact.Addresses.Address[0].StateProv = item.long_name;
-                else if( item.types[0] == 'country' ){
-                    $scope.PhysicalContact.Addresses.Address[0].CountryCode = item.short_name;
-                }else if( item.types[0] == 'postal_code' )
-                    $scope.PhysicalContact.Addresses.Address[0].PostalCode = item.long_name;
-            });
-           
-           console.log($scope.PhysicalContact);
-            $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
-
-        };
-            
-        $scope.initializePhysicalAutoComplete = function() {
-            autocomplete = new google.maps.places.Autocomplete(
-                (document.getElementById('physicalautocomplete')),
-                { types: ['geocode'] }
-            );
-            google.maps.event.addListener(autocomplete, 'place_changed', function() {
-                $scope.fillInAddress('Physical');
-            });
-
-            $timeout( function() {
-                $('#physicalautocomplete').attr('autocomplete', 'false');
-            }, 1000);
-        };
-
-        $timeout( function(){
-            $scope.initializePhysicalAutoComplete();
-        }, 1000);
-        
-        
         
         
         $scope.Property = {
@@ -466,7 +589,6 @@ ExpediaHackathonAPP
         }
         $scope.analyseComments();
     
-            
             
     }])
     .directive('ngThumb', ['$window', function($window) {

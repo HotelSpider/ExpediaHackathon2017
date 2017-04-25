@@ -1,0 +1,121 @@
+var neighborhoodMadrid = [
+  {
+    "lat": 40.412734,
+    "lng": -3.67708,
+    "type": "neighborhood",
+    "id": "179717",
+    "name": "Retiro, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.437258,
+    "lng": -3.700001,
+    "type": "neighborhood",
+    "id": "179719",
+    "name": "Chamberi, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.428793,
+    "lng": -3.721916,
+    "type": "neighborhood",
+    "id": "179720",
+    "name": "Moncloa - Arguelles, Madrid, Spain (type 5)"
+  },
+  {
+    "lat": 40.472525,
+    "lng": -3.683202,
+    "type": "neighborhood",
+    "id": "179780",
+    "name": "Chamartin, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.468064,
+    "lng": -3.568577,
+    "type": "neighborhood",
+    "id": "6053449",
+    "name": "Adolfo Suarez Madrid-Barajas Airport (MAD), Spain (type 4)"
+  },
+  {
+    "lat": 40.45992674,
+    "lng": -3.65258295,
+    "type": "neighborhood",
+    "id": "6053450",
+    "name": "Ciudad Lineal, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.45374947,
+    "lng": -3.69043713,
+    "type": "neighborhood",
+    "id": "6053451",
+    "name": "Santiago Bernabeu, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.42811234,
+    "lng": -3.67818109,
+    "type": "neighborhood",
+    "id": "6053453",
+    "name": "Salamanca, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.422028,
+    "lng": -3.695794,
+    "type": "neighborhood",
+    "id": "6053455",
+    "name": "Chueca, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.420742,
+    "lng": -3.704047,
+    "type": "neighborhood",
+    "id": "6053456",
+    "name": "Gran Via, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.399836,
+    "lng": -3.69717,
+    "type": "neighborhood",
+    "id": "6053457",
+    "name": "Atocha, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.442877,
+    "lng": -3.666954,
+    "type": "neighborhood",
+    "id": "6084531",
+    "name": "Avenida America, Spain (type 5)"
+  },
+  {
+    "lat": 40.41461501,
+    "lng": -3.69807709,
+    "type": "neighborhood",
+    "id": "6131859",
+    "name": "Huertas, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.46657092,
+    "lng": -3.69131287,
+    "type": "neighborhood",
+    "id": "6282804",
+    "name": "Plaza Castilla, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.412403,
+    "lng": -3.703212,
+    "type": "neighborhood",
+    "id": "6282935",
+    "name": "Puerta del Sol, Madrid, Spain (type 7)"
+  },
+  {
+    "lat": 40.41083512,
+    "lng": -3.71051177,
+    "type": "neighborhood",
+    "id": "6282936",
+    "name": "Latina, Madrid, Spain (type 1)"
+  },
+  {
+    "lat": 40.417411,
+    "lng": -3.714308,
+    "type": "neighborhood",
+    "id": "6356477",
+    "name": "Austrias, Madrid, Spain (type 1)"
+  }
+];

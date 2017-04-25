@@ -1,0 +1,198 @@
+var neighborhoodParis = [
+  {
+    "lat": 48.86111,
+    "lng": 2.33543,
+    "type": "neighborhood",
+    "id": "800090",
+    "name": "Louvre - Place Vendome (1 arr. and 2 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.85331,
+    "lng": 2.34899,
+    "type": "neighborhood",
+    "id": "800091",
+    "name": "Marais - Pompidou - Notre Dame de Paris (3 arr. and 4 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.85298,
+    "lng": 2.34664,
+    "type": "neighborhood",
+    "id": "800092",
+    "name": "Latin Quarter - Pantheon (5 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.85789,
+    "lng": 2.2949,
+    "type": "neighborhood",
+    "id": "800093",
+    "name": "Eiffel Tower - Orsay Museum (7 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.872979,
+    "lng": 2.312507,
+    "type": "neighborhood",
+    "id": "800094",
+    "name": "Champs Elysees (8 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.87711,
+    "lng": 2.33791,
+    "type": "neighborhood",
+    "id": "800095",
+    "name": "Opera - Department Stores (9 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.88,
+    "lng": 2.3548,
+    "type": "neighborhood",
+    "id": "800096",
+    "name": "Gare du Nord - Gare de L'Est (10 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.8531,
+    "lng": 2.36934,
+    "type": "neighborhood",
+    "id": "800098",
+    "name": "Gare de Lyon - Bercy (12 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.828219,
+    "lng": 2.36203,
+    "type": "neighborhood",
+    "id": "800099",
+    "name": "Gare d'Austerlitz - Place d'Italie (13 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.82962,
+    "lng": 2.32266,
+    "type": "neighborhood",
+    "id": "800100",
+    "name": "Montparnasse Tower (14 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.84156,
+    "lng": 2.29408,
+    "type": "neighborhood",
+    "id": "800101",
+    "name": "Gare Montparnasse - Porte de Versailles (15 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.85506,
+    "lng": 2.27601,
+    "type": "neighborhood",
+    "id": "800102",
+    "name": "Trocadero (16 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.87368,
+    "lng": 2.29526,
+    "type": "neighborhood",
+    "id": "800103",
+    "name": "Arc de Triomphe - Palais des Congres (17 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.892595,
+    "lng": 2.348161,
+    "type": "neighborhood",
+    "id": "800104",
+    "name": "Montmartre - Sacre Coeur (18 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.88699,
+    "lng": 2.38832,
+    "type": "neighborhood",
+    "id": "800105",
+    "name": "La Villette - Buttes-Chaumont (19 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.8728,
+    "lng": 2.78508,
+    "type": "neighborhood",
+    "id": "6007148",
+    "name": "Disneyland Paris, France (type 5)"
+  },
+  {
+    "lat": 48.89074,
+    "lng": 2.24192,
+    "type": "neighborhood",
+    "id": "6053213",
+    "name": "La Defense, France (type 5)"
+  },
+  {
+    "lat": 49.004061,
+    "lng": 2.571006,
+    "type": "neighborhood",
+    "id": "6053214",
+    "name": "Roissy - Charles de Gaulle Airport (CDG), France (type 4)"
+  },
+  {
+    "lat": 48.80236,
+    "lng": 2.12978,
+    "type": "neighborhood",
+    "id": "6053215",
+    "name": "Palace of Versailles, France (type 3)"
+  },
+  {
+    "lat": 48.728526,
+    "lng": 2.368405,
+    "type": "neighborhood",
+    "id": "6053216",
+    "name": "Orly Airport (ORY), France (type 4)"
+  },
+  {
+    "lat": 48.85999,
+    "lng": 2.38157,
+    "type": "neighborhood",
+    "id": "6053857",
+    "name": "Bastille - Republique (11 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.86253,
+    "lng": 2.39655,
+    "type": "neighborhood",
+    "id": "6053858",
+    "name": "Pere Lachaise - Belleville (20 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.849171,
+    "lng": 2.332691,
+    "type": "neighborhood",
+    "id": "6138721",
+    "name": "Saint-Germain-des-Pres - Luxembourg (6 arr.), Paris, France (type 5)"
+  },
+  {
+    "lat": 48.92957,
+    "lng": 2.35915,
+    "type": "neighborhood",
+    "id": "6186466",
+    "name": "Saint-Denis, France (type 3)"
+  },
+  {
+    "lat": 48.83645543,
+    "lng": 2.23911578,
+    "type": "neighborhood",
+    "id": "6228919",
+    "name": "Boulogne-Billancourt, France (type 3)"
+  },
+  {
+    "lat": 48.86348926,
+    "lng": 2.44862097,
+    "type": "neighborhood",
+    "id": "6228923",
+    "name": "Montreuil, France (type 3)"
+  },
+  {
+    "lat": 48.773492,
+    "lng": 2.480404,
+    "type": "neighborhood",
+    "id": "6348574",
+    "name": "Creteil, France (type 3)"
+  },
+  {
+    "lat": 48.83897325,
+    "lng": 2.4682822,
+    "type": "neighborhood",
+    "id": "6348580",
+    "name": "Vincennes, France (type 3)"
+  }
+];
