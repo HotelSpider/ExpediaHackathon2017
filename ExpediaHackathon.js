@@ -34,7 +34,8 @@ ExpediaHackathonAPP
 
         $rootScope.activitiesFound = [];
 
-        $rootScope.POIFound = [];
+        $rootScope.foundPOI = [];
+
         $rootScope.fillInAddress = function(type){
         
             $('.physicalautocompleteresult').hide();
@@ -72,10 +73,9 @@ ExpediaHackathonAPP
            
             $rootScope.getTCSInformation();
             $rootScope.getGooglePOI();
+            $rootScope.getNearByAirport();
+            $rootScope.getNearByTrainStation();
 
-            console.log($rootScope.activitiesFound);
-
-            console.log($rootScope.POIFound);
 
             $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
 
@@ -93,6 +93,39 @@ ExpediaHackathonAPP
             $timeout( function() {
                 $('#physicalautocomplete').attr('autocomplete', 'false');
             }, 1000);
+        };
+
+        $rootScope.getNearByAirport = function(){
+             var request = {
+                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
+                radius: '50000',
+                type : 'airport',
+                rankBy :'prominence'
+            };
+
+            var container = document.getElementById('results');
+
+            var service = new google.maps.places.PlacesService(container);
+                service.nearbySearch(request, function(airport){
+                $rootScope.nearByAirport = airport;
+            });
+        };
+
+        $rootScope.getNearByTrainStation = function(){
+
+             var request = {
+                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
+                radius: '500',
+                type : 'train_station',
+                rankBy :'prominence'
+            };
+
+            var container = document.getElementById('results');
+
+            var service = new google.maps.places.PlacesService(container);
+                service.nearbySearch(request, function(trainstations){
+                $rootScope.getNearByTrainStation = trainstations;
+            });
         };
 
         $rootScope.getTCSInformation = function(){
@@ -190,21 +223,46 @@ ExpediaHackathonAPP
                 $rootScope.activitiesFound = activitiesFound;
             });
 
-           
-
-
         };
 
         $rootScope.getGooglePOI = function(){
 
-            $http({
-                method:'GET',
-                url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+$rootScope.PhysicalContact.Addresses.Address[0].Latitude+','+$rootScope.PhysicalContact.Addresses.Address[0].Longitude+'&radius=500&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU',
-                 headers: {
-                    'Authorization': null
-                }
-            }).then(function(response, status){
-                console.log(response);
+            var blacklistTypes = ['political'];
+            var blacklistName = ['Hotel', 'hotel', 'hôtel', 'Hôtel'];
+            var foundPOI = [];
+ 
+             var request = {
+                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
+                radius: '500'
+            };
+
+            var container = document.getElementById('results');
+
+            var service = new google.maps.places.PlacesService(container);
+            service.nearbySearch(request, function(places){
+                angular.forEach(places, function(place, placeId){
+
+                    var correct = true;
+
+                    angular.forEach(blacklistName, function(name, indexName){
+                        if(place.name.indexOf(name) !== -1) {
+                          correct = false;
+                        }
+                    });
+      
+                     angular.forEach(place.types, function(type, indexType){
+                        if(blacklistTypes.indexOf(type) !== -1) {
+
+                          correct = false;
+                        }
+                    });
+
+                    if(correct){
+                        foundPOI.push(place);
+                    }
+                });
+
+                $rootScope.foundPOI = foundPOI;
             });
 
         };
@@ -214,8 +272,16 @@ ExpediaHackathonAPP
         }, 1000);
     })
     .config(function($httpProvider, $base64) {
-        var auth = $base64.encode("EQCtest12933870:ew67nk33");
+        var auth = $base64.encode("EQC16637524hotel:test1234Test!");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
+    }).config(function($sceDelegateProvider) {
+      $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        'httphttps://maps.googleapis.com/**'
+      ]);
+
     })
     .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'ReviewAnalyser', 'DescriptionGenerator', 'AmenitiesMapper',
         function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
@@ -489,6 +555,7 @@ ExpediaHackathonAPP
         
         $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
         
+
         var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
         console.info('mediaTags', mediaTags);
 
