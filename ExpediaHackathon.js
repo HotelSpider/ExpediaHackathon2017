@@ -7,14 +7,13 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
     'angularFileUpload',
     'base64',
     'MediaTaggingService',
-    'DescriptionGeneratorService'
+    'DescriptionGeneratorService',
+    'AmenitiesMappingService'
 ]);
 
 ExpediaHackathonAPP
 
     .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout) { 
-        
-        
         $rootScope.featuredAmenityEnum = [
         '2 Bathrooms',
         'Allergy Friendly',
@@ -289,8 +288,8 @@ ExpediaHackathonAPP
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
-    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'DescriptionGenerator',
-        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, DescriptionGenerator) {
+    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'DescriptionGenerator', 'AmenitiesMapper',
+        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, DescriptionGenerator, AmenitiesMapper) {
             var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
@@ -581,6 +580,13 @@ ExpediaHackathonAPP
 
         var propertyDescription = DescriptionGenerator.getPropertyDescription();
         console.info('propertyDescription', propertyDescription);
+
+        var propertyAmenities = AmenitiesMapper.getPropertyAmenities();
+        console.info('propertyAmenities', propertyAmenities);
+
+
+        var roomAmenities = AmenitiesMapper.getRoomAmenities();
+        console.info('roomAmenities', roomAmenities);
     }])
     .directive('ngThumb', ['$window', function($window) {
         var helper = {
