@@ -7,6 +7,7 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
     'angularFileUpload',
     'base64',
     'MediaTaggingService',
+    'ReviewAnalysisService',
     'DescriptionGeneratorService',
     'AmenitiesMappingService'
 ]);
@@ -215,8 +216,8 @@ ExpediaHackathonAPP
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
-    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'DescriptionGenerator', 'AmenitiesMapper',
-        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, DescriptionGenerator, AmenitiesMapper) {
+    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'ReviewAnalyser', 'DescriptionGenerator', 'AmenitiesMapper',
+        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
             var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
@@ -262,20 +263,19 @@ ExpediaHackathonAPP
         };
         uploader.onCompleteItem = function(fileItem, response, status, headers) {
             console.info('onCompleteItem', fileItem, response, status, headers);
-            
-            // place image on the right
-            
+
             // call Media Tagging Service
             var mediaTags = ImageTagging.getMediaTags(fileItem.file.name);
-            console.log(mediaTags);
+            console.info('mediaTags for ' + fileItem.file.name, mediaTags);
+
+            // place image on the right
         };
         uploader.onCompleteAll = function() {
             console.info('onCompleteAll');
         };
 
         console.info('uploader', uploader);
-        
-        
+
         $scope.Property = {
             "providerPropertyId": "1289472",
             "name": "Peach Inn",
@@ -488,29 +488,20 @@ ExpediaHackathonAPP
         
         $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
         
-        $scope.analyseComments = function(hotelURL){
-            var hotelcode = '9917391';
-            if ( hotelURL == 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj' ){ 
-                //code
-            }
-            // call Media Tagging Service
-            $http({
-                method: 'GET', 
-                url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelcode 
-            }).then(function successCallback(response) {
-            }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-            });
-        }
-        $scope.analyseComments();
+        var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
+        console.info('mediaTags', mediaTags);
+
+        var amenities = ImageTagging.getAmenities('2280482');
+        console.info('amenities', amenities);
+
+        var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
+        console.info('reviewKeywords', reviewKeywords);
 
         var propertyDescription = DescriptionGenerator.getPropertyDescription();
         console.info('propertyDescription', propertyDescription);
 
         var propertyAmenities = AmenitiesMapper.getPropertyAmenities();
         console.info('propertyAmenities', propertyAmenities);
-
 
         var roomAmenities = AmenitiesMapper.getRoomAmenities();
         console.info('roomAmenities', roomAmenities);
