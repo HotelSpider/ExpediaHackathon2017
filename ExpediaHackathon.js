@@ -5,7 +5,8 @@
 var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
     'ui.bootstrap',
     'angularFileUpload',
-    'base64'
+    'base64',
+    'MediaTaggingService'
 ]);
 
 ExpediaHackathonAPP
@@ -94,8 +95,8 @@ ExpediaHackathonAPP
         var auth = $base64.encode("foo:bar");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
-    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader',
-        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader) {
+    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging',
+        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging) {
             var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
@@ -145,16 +146,8 @@ ExpediaHackathonAPP
             // place image on the right
             
             // call Media Tagging Service
-            $http({
-                method: 'GET',
-                url: 'http://35.158.79.41/ExpediaHackathon2017/MediaTaggingService/' + fileItem.file.name + '.json'
-            }).then(function successCallback(response) {
-                
-                    
-            }, function errorCallback(response) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-            });
+            var mediaTags = ImageTagging.getMediaTags(fileItem.file.name);
+            console.log(mediaTags);
         };
         uploader.onCompleteAll = function() {
             console.info('onCompleteAll');
