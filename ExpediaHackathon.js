@@ -68,7 +68,7 @@ ExpediaHackathonAPP
             // call Media Tagging Service
             $http({
                 method: 'GET',
-                url: 'http://35.158.79.41/ExpediaHackathon2017/MediaTaggingService/' + fileItem.file.name
+                url: 'http://35.158.79.41/ExpediaHackathon2017/MediaTaggingService/' + fileItem.file.name + '.json'
             }).then(function successCallback(response) {
                 
                     
