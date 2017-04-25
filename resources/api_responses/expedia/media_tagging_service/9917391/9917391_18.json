@@ -1,0 +1,1 @@
+{"timestamp":1493125267926,"status":500,"error":"Internal Server Error","exception":"java.lang.RuntimeException","message":"java.lang.NullPointerException","path":"/service/search/405056f1bf4194ad9742cc9fe7b510002"}
