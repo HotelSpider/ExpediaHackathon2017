@@ -19,7 +19,7 @@
         <script src="ExpediaHackathon.js"></script>
     </head>
     
-    <body>
+    <body  ng-controller="uploadController">
         
         
         <div class="col-xs-6">
@@ -38,6 +38,16 @@
                               id="physicalautocomplete"
                               placeholder="Enter your address"
                               autocomplete="false" />
+              </div>
+            </div>
+            
+            <div id="importComments">
+              <h5>Analyse comments from</h5>
+              <div>
+                <label>AIRBNB</label> <input type="text" ng-model="airbnburl" />
+              </div>
+              <div>
+                <label>Google</label>
               </div>
             </div>
             
@@ -119,7 +129,7 @@
         
         <!-- Right column -->
         <div class="col-xs-6">
-            <div ng-controller="uploadController">
+            <div>
                 
                 <div id="uploaded">
                   

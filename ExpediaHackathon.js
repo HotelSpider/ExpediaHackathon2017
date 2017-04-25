@@ -435,6 +435,36 @@ ExpediaHackathonAPP
                 "Beach View"
             ]
         };
+        
+        $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
+        
+        $scope.analyseComments = function(hotelURL){
+            var hotelcode = '1984135';
+            if ( hotelURL == 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj' ){ 
+                //code
+            }
+            // call Media Tagging Service
+            $http({
+                method: 'GET', 
+                url: 'http://35.158.79.41/ExpediaHackathon2017/resources/test_data/' + hotelcode + '/reviews.json' // 
+            }).then(function successCallback(response) {
+                
+                angular.forEach(response, function(review, key){
+                    $http({
+                        method:'POST',
+                        url:'https://services.expediapartnercentral.com/hotel-review/service/v1/analyze',
+                        text: review.comments
+                    }).then(function(activities, status){
+                    });
+                });
+                
+                    
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
+        }
+        $scope.analyseComments();
     
             
             
