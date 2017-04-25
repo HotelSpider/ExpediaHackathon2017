@@ -67,9 +67,75 @@ ExpediaHackathonAPP
             console.info('onCompleteAll');
         };
 
+        var autocomplete;
+
+        $scope.PhysicalContact = {
+            Addresses : {
+                Address :[
+                    {}
+                ]
+            }
+        };
+
         console.info('uploader', uploader);
+
+        $scope.fillInAddress = function(type){
+        
+            $('.physicalautocompleteresult').hide();
+            var place = autocomplete.getPlace();
+            var address = place.address_components;
+            $scope.PhysicalContact.Addresses.Address[0].Latitude = place.geometry.location.lat().toString();
+            $scope.PhysicalContact.Addresses.Address[0].Longitude = place.geometry.location.lng().toString();
+        
+            $scope.PhysicalContact.Addresses.Address[0].AddressLine = '';
+            $scope.PhysicalContact.Addresses.Address[0].StreetNmbr = '';
+            $scope.PhysicalContact.Addresses.Address[0].County = '';
+            $scope.PhysicalContact.Addresses.Address[0].CityName = '';
+            $scope.PhysicalContact.Addresses.Address[0].StateProv  = '';
+            $scope.PhysicalContact.Addresses.Address[0].CountryCode  = '';
+            $scope.PhysicalContact.Addresses.Address[0].PostalCode  = '';
+
+            angular.forEach( address, function(item, key){
+                if( item.types[0] == 'route' )
+                    $scope.PhysicalContact.Addresses.Address[0].AddressLine = item.long_name;
+                else if( item.types[0] == 'street_number' )
+                    $scope.PhysicalContact.Addresses.Address[0].StreetNmbr = item.long_name;
+                else if( item.types[0] == 'administrative_area_level_2' ) {
+                    $scope.displayWarningCountyPhysical = item.long_name.length > 32;
+                    $scope.PhysicalContact.Addresses.Address[0].County = item.long_name.substr(0, 32);
+                }
+                else if( item.types[0] == 'locality' )
+                    $scope.PhysicalContact.Addresses.Address[0].CityName = item.long_name;
+                else if( item.types[0] == 'administrative_area_level_1' )
+                    $scope.PhysicalContact.Addresses.Address[0].StateProv = item.long_name;
+                else if( item.types[0] == 'country' ){
+                    $scope.PhysicalContact.Addresses.Address[0].CountryCode = item.short_name;
+                }else if( item.types[0] == 'postal_code' )
+                    $scope.PhysicalContact.Addresses.Address[0].PostalCode = item.long_name;
+            });
+           
+           console.log($scope.PhysicalContact);
+            $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
+
+        };
             
-            
+        $scope.initializePhysicalAutoComplete = function() {
+            autocomplete = new google.maps.places.Autocomplete(
+                (document.getElementById('physicalautocomplete')),
+                { types: ['geocode'] }
+            );
+            google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                $scope.fillInAddress('Physical');
+            });
+
+            $timeout( function() {
+                $('#physicalautocomplete').attr('autocomplete', 'false');
+            }, 1000);
+        };
+
+        $timeout( function(){
+            $scope.initializePhysicalAutoComplete();
+        }, 1000);
             
             
     }])
