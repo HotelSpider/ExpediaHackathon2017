@@ -565,7 +565,10 @@ ExpediaHackathonAPP
         var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
         console.info('reviewKeywords', reviewKeywords);
 
-        var propertyDescription = DescriptionGenerator.getPropertyDescription(amenities, reviewKeywords);
+        var geoLocationData = {};
+        console.info('geoLocationData', geoLocationData);
+
+        var propertyDescription = DescriptionGenerator.getPropertyDescription(amenities, reviewKeywords, geoLocationData);
         console.info('propertyDescription', propertyDescription);
 
         var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
