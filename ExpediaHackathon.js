@@ -22,6 +22,8 @@ ExpediaHackathonAPP
 
         var autocomplete;
 
+        $rootScope.HotelName = '';
+
         $rootScope.PhysicalContact = {
             Addresses : {
                 Address :[
@@ -607,7 +609,7 @@ ExpediaHackathonAPP
         var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
         console.info('roomAmenities', roomAmenities);
 
-        var propertyDescription = DescriptionGenerator.getPropertyDescription(propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
+        var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
         console.info('propertyDescription', propertyDescription);
     }])
     .directive('ngThumb', ['$window', function($window) {
