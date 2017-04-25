@@ -601,14 +601,14 @@ ExpediaHackathonAPP
         var geoLocationData = {};
         console.info('geoLocationData', geoLocationData);
 
-        var propertyDescription = DescriptionGenerator.getPropertyDescription(amenities, reviewKeywords, geoLocationData);
-        console.info('propertyDescription', propertyDescription);
-
         var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
         console.info('propertyAmenities', propertyAmenities);
 
         var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
         console.info('roomAmenities', roomAmenities);
+
+        var propertyDescription = DescriptionGenerator.getPropertyDescription(propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
+        console.info('propertyDescription', propertyDescription);
     }])
     .directive('ngThumb', ['$window', function($window) {
         var helper = {

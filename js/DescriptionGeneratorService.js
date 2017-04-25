@@ -1,7 +1,7 @@
 var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', [])
     .service('DescriptionGenerator', function () {
 
-        this.getPropertyDescription = function (amenities, reviewKeywords, geoLocationData) {
+        this.getPropertyDescription = function (propertyAmenities, roomAmenities, reviewKeywords, geoLocationData) {
             return 'No description yet';
         };
 

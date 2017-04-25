@@ -26,6 +26,8 @@ var featuredAmenitiesFullList = [
       'Terrace'
   ];
 
+var roomAmenitiesFullList = [];
+
 var viewsFullList = [
     'Bay View',
     'Beach View',
