@@ -1,0 +1,668 @@
+{
+  "reviews": [
+    {
+      "author": {
+        "first_name": "Christina",
+        "has_profile_pic": true,
+        "id": 48268659,
+        "picture_url": "https://a0.muscache.com/im/pictures/e21b45f6-b1bd-4701-bf48-1731f1a89281.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Christina",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/e21b45f6-b1bd-4701-bf48-1731f1a89281.jpg?aki_policy=profile_small"
+      },
+      "author_id": 48268659,
+      "can_be_edited": false,
+      "comments": "Karen's apartment was cute and comfy. The  location is unbelievable. We felt we could touch the Eiffel Tower. Our only complaint was the stairs. We struggled climbing the six flights of stairs with our luggage. You must be in good health to walk up these stairs. \nAbove all, we had a wonderful stay and enjoyed Paris very much. Karen is a nice host and was always in touch. ",
+      "created_at": "2017-04-22T08:25:32Z",
+      "id": 146251469,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "I cannot thank you for your 4 stars comment, since with you I will soon loose the superhost status! And it is such a source of disappointment for me whereas I had only positive feedback from you! this is a nightmare, as there is nothing I can do to change the stairs... \r\nThe stairs are clearly stated in the description and you decided to go for it! \r\nI wish I had known you would have been disappointed by stairs I would have not accepted your reservation as this kind of apartment is not done for you apparently! ",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Teresa",
+        "has_profile_pic": true,
+        "id": 71624869,
+        "picture_url": "https://a0.muscache.com/im/pictures/dbec7d38-293a-4038-88b9-9e882a10059e.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Teresa",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/dbec7d38-293a-4038-88b9-9e882a10059e.jpg?aki_policy=profile_small"
+      },
+      "author_id": 71624869,
+      "can_be_edited": false,
+      "comments": "I rented this apartment for the view!  We were celebrating my friends 50th birthday. There were 3 of us and we were very comfortable in the space. Great location and view!!  Get in shape for the stairs!  They are worth it. Pictures are accurate and sightseeing was easy from this location. \n\nThanks Karen",
+      "created_at": "2017-04-15T06:10:13Z",
+      "id": 144180397,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Patrick",
+        "has_profile_pic": true,
+        "id": 94923353,
+        "picture_url": "https://a0.muscache.com/im/pictures/14c40f66-644b-4c70-9070-6f259728f8eb.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Patrick",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/14c40f66-644b-4c70-9070-6f259728f8eb.jpg?aki_policy=profile_small"
+      },
+      "author_id": 94923353,
+      "can_be_edited": false,
+      "comments": "The view is exactly same as the photo. The apartment is very clean and cozy. However, be note that the stairs is really steep and you need to climb 6 floors. But that's how you should live like a Parisian in Paris. 5 stars! ",
+      "created_at": "2017-04-08T07:00:40Z",
+      "id": 142408152,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Ekin",
+        "has_profile_pic": true,
+        "id": 79578037,
+        "picture_url": "https://a0.muscache.com/im/pictures/e3edc658-6979-4e39-9142-532239799eb7.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Ekin",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/e3edc658-6979-4e39-9142-532239799eb7.jpg?aki_policy=profile_small"
+      },
+      "author_id": 79578037,
+      "can_be_edited": false,
+      "comments": "The accommodation is exactly as described. The view was amazing and the apartment was top notch. The only downside I can think of is the stairs getting to the accommodation, there is no elevators and it is quite steep. So I would recommend anyone staying here to arrive before dark because there are no lights at the staircase.",
+      "created_at": "2017-04-01T09:56:08Z",
+      "id": 140902723,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Shoki",
+        "has_profile_pic": true,
+        "id": 114241714,
+        "picture_url": "https://a0.muscache.com/im/pictures/1da9d683-e788-43eb-be4f-56e6ff699b46.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Shoki",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/1da9d683-e788-43eb-be4f-56e6ff699b46.jpg?aki_policy=profile_small"
+      },
+      "author_id": 114241714,
+      "can_be_edited": false,
+      "comments": "The room was a bit dusty when we first came in but eventually got used to it. The view off the windows was really fabulous and romantic as everybody mentioned.",
+      "created_at": "2017-03-30T08:23:27Z",
+      "id": 140488540,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "When you arrived in the apartment, I contacted you to know if you were OK. \r\nYour answer was: \"Hi Karen. We just got into the room and everything is perfect! Thanks!!\"\r\nI think it worth mentioning it. \r\n",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Ceci",
+        "has_profile_pic": true,
+        "id": 3718770,
+        "picture_url": "https://a0.muscache.com/im/pictures/cbc7df6f-52da-4d08-89a8-5e12f005ce14.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Ceci",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/cbc7df6f-52da-4d08-89a8-5e12f005ce14.jpg?aki_policy=profile_small"
+      },
+      "author_id": 3718770,
+      "can_be_edited": false,
+      "comments": "The apartment is exactly as shown in the photos, the view it's amazing! It's like having the Eiffel Tower all to yourself!! It really has everything you need! Close to metro station \"Iena\", supermarket and other services! The stairs ain't that bad, just not good for big luggage. \n\nThe communication with Karen was fluid and very informative! \n\nHope the next guests enjoy it as much as we did.",
+      "created_at": "2017-03-28T09:58:27Z",
+      "id": 140201839,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "David",
+        "has_profile_pic": true,
+        "id": 103958150,
+        "picture_url": "https://a0.muscache.com/im/pictures/320f1d8c-4bc8-40d0-a4f3-a6de86439986.jpg?aki_policy=profile_x_medium",
+        "smart_name": "David",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/320f1d8c-4bc8-40d0-a4f3-a6de86439986.jpg?aki_policy=profile_small"
+      },
+      "author_id": 103958150,
+      "can_be_edited": false,
+      "comments": "The apartment is a true gem!  Karen was very flexible with our check in and was always available to ensure our stay was comfortable. The décor is very eclectic, comfortable and fully catered as a liveable apartment. Plus there is no need to worry about enough power points to charge you devices as there are power points everywhere (with adapters supplied).\nThe stairs are exactly as described and merely act as training for the rest of Paris. You climb everywhere in Paris! And as other guests stated, the views are breathtaking. We failed to find a better view of the Eiffel Tower on our trip.\nKaren has high but reasonable expectations regarding the cleanliness of the apartment and we were happy to pay the €50 to make the most of our holiday time. A lot of thought has gone into this apartment and I cannot recommend it highly enough!",
+      "created_at": "2017-03-20T10:52:16Z",
+      "id": 138586094,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Nina",
+        "has_profile_pic": true,
+        "id": 16435511,
+        "picture_url": "https://a0.muscache.com/im/users/16435511/profile_pic/1402013672/original.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Nina",
+        "thumbnail_url": "https://a0.muscache.com/im/users/16435511/profile_pic/1402013672/original.jpg?aki_policy=profile_small"
+      },
+      "author_id": 16435511,
+      "can_be_edited": false,
+      "comments": "This place is amazing! (Hotels nearby go for $1000+ per night).  Of course-  you can't beat the view.  \n\nMore than that though-  the apartment is set up wonderfully.  There are spare adapter plugs,  wireless speakers, a nespresso, and even a scale to weigh your bags before going to the airport.  These little things make for a big difference in how easy and comfortable it feels. \n\nThe stairs DO suck-  but it's worth it.  Even if you're tired at the end.  We paid the cleaning fee of 50€ which was well worth it. \n\nKaren was super helpful.  Her instructions made check in super easy.  Also,  as I work,  I really appreciated that the wifi was of really good quality-  Something that can really be lacking.  \n\nOn our next trip,  we will definitely stay here.  In a word-  incredible. ",
+      "created_at": "2017-03-09T10:38:22Z",
+      "id": 136222145,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Emily",
+        "has_profile_pic": true,
+        "id": 109240273,
+        "picture_url": "https://a0.muscache.com/im/pictures/e0d34aa3-4583-4af5-aa22-9e7553555d61.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Emily",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/e0d34aa3-4583-4af5-aa22-9e7553555d61.jpg?aki_policy=profile_small"
+      },
+      "author_id": 109240273,
+      "can_be_edited": false,
+      "comments": "Wow, what an amazing view! If this is your first time in Paris you need to book Karen's place. You won't regret it. Karen is easy to communicate with and very clear about what specifically needs to be done during the check-in and check-out process. The place is exactly as described and the view of the Eiffel Tower is unbeatable. Thanks Karen!",
+      "created_at": "2017-03-02T08:58:45Z",
+      "id": 134955328,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Kyrillos",
+        "has_profile_pic": true,
+        "id": 80983288,
+        "picture_url": "https://a0.muscache.com/im/pictures/e2f536b3-11d5-444f-ab2d-6061adfc47ad.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Kyrillos",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/e2f536b3-11d5-444f-ab2d-6061adfc47ad.jpg?aki_policy=profile_small"
+      },
+      "author_id": 80983288,
+      "can_be_edited": false,
+      "comments": "This place is great, the view is amazing and exactly how it is in the photos (other than from one side of the bed you can only see one of the legs and and there isn't a view from one of the sofa seats).\nThe apartment is indeed at the top of the stairs (6 floor walk up with a counted 142 stairs) and the stairs are narrow  so if you are bringing big luggage items, you'll need to make several trips.\nIt is a very well furnished apartment. Though if you are planning on washing any clothes on your trip, the radiator/heater is used as a dryer at the same time with a rack placed in front of it will take some time to dry.\n\nKaren is very nice and replies very quick to message and any requests.",
+      "created_at": "2017-02-08T08:59:05Z",
+      "id": 130774930,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Claire",
+        "has_profile_pic": true,
+        "id": 45773975,
+        "picture_url": "https://a0.muscache.com/im/pictures/26ec0b5b-4179-4bb3-a019-2cce4312e7b9.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Claire",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/26ec0b5b-4179-4bb3-a019-2cce4312e7b9.jpg?aki_policy=profile_small"
+      },
+      "author_id": 45773975,
+      "can_be_edited": false,
+      "comments": "The apartment is amazing! A fabulous view (even better then the photo)!! Although you have to carry your suitcases to the 6th floor, it is 100% worth it! The studio apartment has everything you need, and a very modern bathroom. \nShame my trip ended with a request from the owner wanting me to pay her for ripping a hole in a blanket I never touched. It was still enjoyable. \n\nP.s. When given the option to clean apartment yourself or pay the 50euro, she may still request the 50euro if she didn't like the cleanliness. ",
+      "created_at": "2017-01-27T08:32:30Z",
+      "id": 128737059,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "To be more precise, the guest arriving after you complained about your supposed cleanliness ! and I could not disagree since they highlighted crumbs inside the bed... Regarding blanket, it was on the bed, if you haven't touched it, you must have slept on the floor that probably explain why you considered unnecessary to also wash your bed linen... ",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Tanja",
+        "has_profile_pic": true,
+        "id": 72511482,
+        "picture_url": "https://a0.muscache.com/im/pictures/20bb7d0e-e311-44fc-addf-2deb38c67b11.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Tanja",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/20bb7d0e-e311-44fc-addf-2deb38c67b11.jpg?aki_policy=profile_small"
+      },
+      "author_id": 72511482,
+      "can_be_edited": false,
+      "comments": "View of Eiffel Tower from apt is perfect!! Stairs are difficult and not for anyone who struggles but the view is worth it.",
+      "created_at": "2017-01-23T02:39:53Z",
+      "id": 128204367,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Samuel",
+        "has_profile_pic": true,
+        "id": 88233232,
+        "picture_url": "https://a0.muscache.com/im/pictures/c2b26053-f913-45f0-998b-fa79769abfb6.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Samuel",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/c2b26053-f913-45f0-998b-fa79769abfb6.jpg?aki_policy=profile_small"
+      },
+      "author_id": 88233232,
+      "can_be_edited": false,
+      "comments": "Amazing view. Decor was terrific as well. The place is authentic and if you want to do Paris you will have to wake up at least one morning in this bed. Look left and the eiffel tower is a stones throw away.",
+      "created_at": "2017-01-14T08:26:48Z",
+      "id": 126738770,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Felipe",
+        "has_profile_pic": true,
+        "id": 66126226,
+        "picture_url": "https://a0.muscache.com/im/pictures/9f916dfa-ef18-4067-b152-e1844e457d94.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Felipe",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/9f916dfa-ef18-4067-b152-e1844e457d94.jpg?aki_policy=profile_small"
+      },
+      "author_id": 66126226,
+      "can_be_edited": false,
+      "comments": "As everyone says, the stairs will kill you, but the view more than makes it up to it. The apartment is amazing, no doubt the best one we had during our entire trip to Europe. It is spacious, extremely clean and well decorated. The view is breath taking, the apartment is not too close, but in perfectly walking distance from a bunch of great places to visit, like les champs-elysées and the tower of Montparnasse, as well from the Iéna subway station, which helps to other farther places. We recommend it to everyone",
+      "created_at": "2017-01-13T03:00:47Z",
+      "id": 126575205,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Jenny",
+        "has_profile_pic": true,
+        "id": 81201570,
+        "picture_url": "https://a0.muscache.com/im/pictures/9c5f80d4-dee7-4c9f-8dec-8314faf0e426.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Jenny",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/9c5f80d4-dee7-4c9f-8dec-8314faf0e426.jpg?aki_policy=profile_small"
+      },
+      "author_id": 81201570,
+      "can_be_edited": false,
+      "comments": "Wonderful apartment and the view was amazing, Karen is very helpful and you get to wear off some calories climbing stairs.",
+      "created_at": "2017-01-04T10:28:54Z",
+      "id": 125182051,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Frank",
+        "has_profile_pic": true,
+        "id": 40412057,
+        "picture_url": "https://a0.muscache.com/im/pictures/42734b3b-6698-4598-b5f2-0145d3ddf098.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Frank",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/42734b3b-6698-4598-b5f2-0145d3ddf098.jpg?aki_policy=profile_small"
+      },
+      "author_id": 40412057,
+      "can_be_edited": false,
+      "comments": "If you want a view of the iconic Eiffel Tower (as we did), this apartment cannot be beat. The studio is right on the Seine, just across the river from the the Eiffel Tower so had a 180-degree, above-the-trees view including the Roue de Paris (Ferris wheel at Place de la Concorde), Grand Palais, Les Invalides, Holy Trinity Cathedral, at least three bridges, passing boats, and a few modern office buildings. There are two small balconies that are good for standing. The bathroom, kitchen, supplies, cleanliness, and decor were all very good. The walk up the 124 stairs to the 7th floor (US numbering system) would be difficult with lots of luggage or weak legs, but there are few apartments in the tower so there was lots of privacy (we only saw one other person on the stairs during our week stay). The stairs themselves are solid, but there was some peeling paint and some loose tiles. The location was great for walks, (e.g., Eiffel Tower, Champs de Mars, Trocadero, alone the Seine) and within 5-10 minutes of Iena, Trocadero, Alma-Marceau, and Pont de l'Alma Metro stops. We never met Karen but communication was excellent. All-in-all our stay at Karen's place was outstanding.",
+      "created_at": "2016-12-19T08:40:51Z",
+      "id": 121829282,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "David",
+        "has_profile_pic": true,
+        "id": 83846125,
+        "picture_url": "https://a0.muscache.com/im/pictures/3888b146-e4ae-4bc1-bc4d-08e512ad469d.jpg?aki_policy=profile_x_medium",
+        "smart_name": "David",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/3888b146-e4ae-4bc1-bc4d-08e512ad469d.jpg?aki_policy=profile_small"
+      },
+      "author_id": 83846125,
+      "can_be_edited": false,
+      "comments": "Perfect location, you can pretty much walk everywhere. Incredibly affordable! The stairs are worth the view! Waking up and going to sleep with the Eiffel Tower is priceless! Karen and her husband are great hosts! Fantastic communication. :) ",
+      "created_at": "2016-12-11T10:06:06Z",
+      "id": 120660197,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Kate",
+        "has_profile_pic": true,
+        "id": 63085175,
+        "picture_url": "https://a0.muscache.com/im/pictures/d5716be8-6ea9-42a8-8239-a408469bde05.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Kate",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/d5716be8-6ea9-42a8-8239-a408469bde05.jpg?aki_policy=profile_small"
+      },
+      "author_id": 63085175,
+      "can_be_edited": false,
+      "comments": "Karen was there waiting for us upon arrival and even helped us with our bag upon arriving to the 6th floor- out of breath- :) Agreed with everyone else- the stairs will kill you! But- worth it. The photos were EXACTLY what it looked like when we arrived. My husband raved about the view every night we retired to the chairs with tea and watched the tower sparkle. The location is great- we felt very safe. My husband and I walked everywhere and we spent most of our time in other arrondissements so we were a little further from them. I'd suggest getting to know the Metro system if you have a lot of ground to cover in a short time. Since you are restocking the items you use- I'd suggest packing an extra roll of toilet paper or 2- and then you don't even have to worry about getting to the supermarket. Convenient to have plates/mugs and a fridge & microwave to keep snacks and warm them up.",
+      "created_at": "2016-11-30T06:26:09Z",
+      "id": 116385457,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Asisa",
+        "has_profile_pic": true,
+        "id": 33077948,
+        "picture_url": "https://a0.muscache.com/im/users/33077948/profile_pic/1431902471/original.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Asisa",
+        "thumbnail_url": "https://a0.muscache.com/im/users/33077948/profile_pic/1431902471/original.jpg?aki_policy=profile_small"
+      },
+      "author_id": 33077948,
+      "can_be_edited": false,
+      "comments": "As others have mentioned, it's on the 6th floor and there is no elevator but the view of the Eiffel Tower more than makes up for that. The location is wonderful and having that view was a dream, especially at night during the light show. The neighborhood was safe and convenient and the host was very helpful.  She even gifted us a nice bottle of white wine which was a lovely touch. The place was clean and spacious for the 2 of us. We would love to stay there again. ",
+      "created_at": "2016-11-22T08:42:55Z",
+      "id": 115148488,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    },
+    {
+      "author": {
+        "first_name": "Kevin",
+        "has_profile_pic": true,
+        "id": 26918651,
+        "picture_url": "https://a0.muscache.com/im/pictures/5ae0a4ce-0fee-4d9e-b8f7-def7ed0c4a5c.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Kevin",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/5ae0a4ce-0fee-4d9e-b8f7-def7ed0c4a5c.jpg?aki_policy=profile_small"
+      },
+      "author_id": 26918651,
+      "can_be_edited": false,
+      "comments": "We had a great 1 week stay in Paris.  Great view of the Eiffel tower to enjoy each evening when you return from sightseeing.  It is close to a metro stop for easy access to other points in the city, but Uber was also very convenient for getting to areas requiring a connecting stop a little faster.  There is a stocked kitchen for cooking through we didn't use it.  There is a washer, but no dryer so you can lighten up the packing for a longer stay.  Everything was clean and exactly as described. As noted, it is a 6th story walk up, but the effort is worth the view.",
+      "created_at": "2016-11-21T05:10:57Z",
+      "id": 114970498,
+      "listing_id": 9917391,
+      "recipient_id": 50988393,
+      "listing": {
+        "id": 9917391,
+        "name": "View on Eiffel Tower and Paris"
+      },
+      "recipient": {
+        "first_name": "Karen",
+        "has_profile_pic": true,
+        "id": 50988393,
+        "picture_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_x_medium",
+        "smart_name": "Karen",
+        "thumbnail_url": "https://a0.muscache.com/im/pictures/b502db3f-a225-4b3f-8737-29e83d6f637f.jpg?aki_policy=profile_small"
+      },
+      "response": "",
+      "role": "guest",
+      "language": "en",
+      "user_flag": null
+    }
+  ],
+  "metadata": {
+    "reviews_count": 48,
+    "should_show_review_translations": false
+  }
+}
