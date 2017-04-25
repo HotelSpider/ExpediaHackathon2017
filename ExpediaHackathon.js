@@ -270,10 +270,10 @@ ExpediaHackathonAPP
 
             $http({
                 method:'GET',
-                url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=48.868496526,2.304498782&radius=500&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU',
+                url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+$rootScope.PhysicalContact.Addresses.Address[0].Latitude+','+$rootScope.PhysicalContact.Addresses.Address[0].Longitude+'&radius=500&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU',
                  headers: {
-                'Authorization': undefined
-            }
+                    'Authorization': null
+                }
             }).then(function(response, status){
                 console.log(response);
             });
