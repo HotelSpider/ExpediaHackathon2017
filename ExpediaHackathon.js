@@ -6,7 +6,8 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
     'ui.bootstrap',
     'angularFileUpload',
     'base64',
-    'MediaTaggingService'
+    'MediaTaggingService',
+    'DescriptionGeneratorService'
 ]);
 
 ExpediaHackathonAPP
@@ -288,8 +289,8 @@ ExpediaHackathonAPP
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
-    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging',
-        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging) {
+    .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'DescriptionGenerator',
+        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, DescriptionGenerator) {
             var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
@@ -571,18 +572,15 @@ ExpediaHackathonAPP
                 method: 'GET', 
                 url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelcode 
             }).then(function successCallback(response) {
-                
-                
-                
-                    
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.
             });
         }
         $scope.analyseComments();
-    
-            
+
+        var propertyDescription = DescriptionGenerator.getPropertyDescription();
+        console.info('propertyDescription', propertyDescription);
     }])
     .directive('ngThumb', ['$window', function($window) {
         var helper = {
