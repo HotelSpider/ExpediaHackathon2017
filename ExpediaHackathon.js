@@ -4,11 +4,16 @@
 
 var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
     'ui.bootstrap',
-    'angularFileUpload'
+    'angularFileUpload',
+    'base64'
 ]);
 
 ExpediaHackathonAPP
     .run(function ($rootScope, $location, $http, $uibModal, $interval) { 
+    })
+    .config(function($httpProvider, $base64) {
+        var auth = $base64.encode("foo:bar");
+        $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
     })
     .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader',
         function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader) {
