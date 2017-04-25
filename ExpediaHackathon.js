@@ -30,6 +30,10 @@ ExpediaHackathonAPP
             }
         };
 
+        var map = null;
+        var mapOptions = null;
+        var marker = null;
+
         $rootScope.neighborhood = 'aaa';
 
         $rootScope.activitiesFound = [];
@@ -43,6 +47,8 @@ ExpediaHackathonAPP
             var address = place.address_components;
             $rootScope.PhysicalContact.Addresses.Address[0].Latitude = place.geometry.location.lat().toString();
             $rootScope.PhysicalContact.Addresses.Address[0].Longitude = place.geometry.location.lng().toString();
+            $rootScope.setMarker(place.geometry.location.lat().toString(), place.geometry.location.lng().toString());
+
         
             $rootScope.PhysicalContact.Addresses.Address[0].AddressLine = '';
             $rootScope.PhysicalContact.Addresses.Address[0].StreetNmbr = '';
@@ -80,6 +86,17 @@ ExpediaHackathonAPP
             $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
 
         };
+
+        $rootScope.initializeMap = function(lat, lng) {
+            mapOptions = {
+                center: { lat: !lat?46.3832683:parseFloat(lat),
+                          lng: !lng?6.234785200000033:parseFloat(lng) },
+                zoom: !lat?1:16,
+                draggable:true
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+        };
             
         $rootScope.initializePhysicalAutoComplete = function() {
             autocomplete = new google.maps.places.Autocomplete(
@@ -91,7 +108,9 @@ ExpediaHackathonAPP
             });
 
             $timeout( function() {
+                $rootScope.initializeMap(false, false);
                 $('#physicalautocomplete').attr('autocomplete', 'false');
+                
             }, 1000);
         };
 
@@ -100,15 +119,31 @@ ExpediaHackathonAPP
                 location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
                 radius: '50000',
                 type : 'airport',
-                rankBy :'prominence'
+                //rankBy :'prominence'
             };
 
-            var container = document.getElementById('results');
-
-            var service = new google.maps.places.PlacesService(container);
+            var service = new google.maps.places.PlacesService(map);
                 service.nearbySearch(request, function(airport){
                 $rootScope.nearByAirport = airport;
             });
+        };
+
+        $rootScope.setMarker = function(lat, lng) {
+            var myLatlng = new google.maps.LatLng(lat, lng);
+            if( marker == null ){
+                marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    draggable: false
+                });
+            }
+            else {
+                marker.setPosition(myLatlng);
+                $scope.hotel.Latitude = lat;
+                $scope.hotel.Longitude = lng;
+            }
+            $timeout( function(){ map.setCenter(marker.getPosition()); }, 1000 );
+            map.setZoom(16);//zoom to marker
         };
 
         $rootScope.getNearByTrainStation = function(){
@@ -117,12 +152,12 @@ ExpediaHackathonAPP
                 location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
                 radius: '500',
                 type : 'train_station',
-                rankBy :'prominence'
+                //rankBy :'prominence'
             };
 
-            var container = document.getElementById('results');
 
-            var service = new google.maps.places.PlacesService(container);
+            var service = new google.maps.places.PlacesService(map);
+            
                 service.nearbySearch(request, function(trainstations){
                 $rootScope.getNearByTrainStation = trainstations;
             });
@@ -236,9 +271,7 @@ ExpediaHackathonAPP
                 radius: '500'
             };
 
-            var container = document.getElementById('results');
-
-            var service = new google.maps.places.PlacesService(container);
+            var service = new google.maps.places.PlacesService(map);
             service.nearbySearch(request, function(places){
                 angular.forEach(places, function(place, placeId){
 
