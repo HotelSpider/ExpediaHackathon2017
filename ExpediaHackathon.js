@@ -14,7 +14,8 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
 
 ExpediaHackathonAPP
 
-    .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout) { 
+    .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout) {
+
         $rootScope.featuredAmenityEnum = featuredAmenitiesFullList;
 
         $rootScope.viewEnum = viewsFullList;
@@ -497,13 +498,13 @@ ExpediaHackathonAPP
         var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
         console.info('reviewKeywords', reviewKeywords);
 
-        var propertyDescription = DescriptionGenerator.getPropertyDescription();
+        var propertyDescription = DescriptionGenerator.getPropertyDescription(amenities, reviewKeywords);
         console.info('propertyDescription', propertyDescription);
 
-        var propertyAmenities = AmenitiesMapper.getPropertyAmenities();
+        var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
         console.info('propertyAmenities', propertyAmenities);
 
-        var roomAmenities = AmenitiesMapper.getRoomAmenities();
+        var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
         console.info('roomAmenities', roomAmenities);
     }])
     .directive('ngThumb', ['$window', function($window) {
