@@ -62,6 +62,20 @@ ExpediaHackathonAPP
         };
         uploader.onCompleteItem = function(fileItem, response, status, headers) {
             console.info('onCompleteItem', fileItem, response, status, headers);
+            
+            // place image on the right
+            
+            // call Media Tagging Service
+            $http({
+                method: 'GET',
+                url: 'http://35.158.79.41/ExpediaHackathon2017/MediaTaggingService/' + fileItem.file.name
+            }).then(function successCallback(response) {
+                
+                    
+            }, function errorCallback(response) {
+                // called asynchronously if an error occurs
+                // or server returns response with an error status.
+            });
         };
         uploader.onCompleteAll = function() {
             console.info('onCompleteAll');
