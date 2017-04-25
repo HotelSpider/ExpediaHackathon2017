@@ -4,7 +4,7 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
         this.analyseReviews = function (hotelCode) {
             $http({
                 method: 'GET',
-                url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelcode
+                url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelCode
             }).then(function successCallback(response) {
                 return JSON.parse(response);
             }, function errorCallback(response) {
