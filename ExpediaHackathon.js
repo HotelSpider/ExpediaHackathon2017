@@ -569,17 +569,10 @@ ExpediaHackathonAPP
             // call Media Tagging Service
             $http({
                 method: 'GET', 
-                url: 'http://35.158.79.41/ExpediaHackathon2017/resources/test_data/' + hotelcode + '/reviews.json' // 
+                url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelcode 
             }).then(function successCallback(response) {
                 
-                angular.forEach(response, function(review, key){
-                    $http({
-                        method:'POST',
-                        url:'https://services.expediapartnercentral.com/hotel-review/service/v1/analyze',
-                        text: review.comments
-                    }).then(function(activities, status){
-                    });
-                });
+                
                 
                     
             }, function errorCallback(response) {
