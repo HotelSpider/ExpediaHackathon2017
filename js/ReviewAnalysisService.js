@@ -6,7 +6,7 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
                 method: 'GET',
                 url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelCode
             }).then(function successCallback(response) {
-                return JSON.parse(response);
+                return response.data;
             }, function errorCallback(response) {
                 // called asynchronously if an error occurs
                 // or server returns response with an error status.

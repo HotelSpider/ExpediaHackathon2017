@@ -34,8 +34,9 @@
                 method: 'GET',
                 url: 'http://35.158.79.41/ExpediaHackathon2017/resources/api_responses/expedia/media_tagging_service/' + propId + '/' + imgFilenameRoot + '.json'
             }).then(function successCallback(response) {
-                var data = JSON.parse(response.replace(/\n/g, ''));
-
+                
+                var data = response.data;
+                
                 var roomConfidence = 0;
                 var propConfidence = 0;
                 angular.forEach(data.label, function (lbl) {
