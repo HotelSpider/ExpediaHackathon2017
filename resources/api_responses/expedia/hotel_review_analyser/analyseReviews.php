@@ -1,7 +1,6 @@
 <?php
-// '9917391', 
 
-foreach( array('2280482', '10275336') as $hotelcode){
+foreach( array('9917391', '2280482', '10275336') as $hotelcode){
     
     $json = file_get_contents(__DIR__ . '/../../../test_data/'.$hotelcode.'/reviews.json');
     $json = json_decode($json, true);
@@ -9,7 +8,7 @@ foreach( array('2280482', '10275336') as $hotelcode){
     $rawAnalysis = array();
     
     foreach($json as $reviews){ 
-        if( isset($reviews) ){ die(var_dump($reviews));
+        if( isset($reviews) ){ 
             foreach($reviews as $review){
             
                 $comment = $review['comments'];
