@@ -19,6 +19,10 @@ ExpediaHackathonAPP
         $rootScope.featuredAmenityEnum = featuredAmenitiesFullList;
 
         $rootScope.viewEnum = viewsFullList;
+        
+        $rootScope.startAnalysis = true;
+        
+        $rootScope.step = 1;
 
         var autocomplete;
 
@@ -403,12 +407,26 @@ ExpediaHackathonAPP
     .config(function($httpProvider, $base64) {
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
-    })
+    }) 
+    .controller('exampleController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'ReviewAnalyser', 'DescriptionGenerator', 'AmenitiesMapper',
+        function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
+            
+            
+        
+        }
+    ])
     .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'ReviewAnalyser', 'DescriptionGenerator', 'AmenitiesMapper',
         function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
-            var uploader = $scope.uploader = new FileUploader({
+        
+        var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
+            
+            
+        $scope.mediaTags = [];
+        $scope.mediaTags = [];
+        $scope.mediaTags = [];
+        
 
         // FILTERS
 
@@ -433,6 +451,7 @@ ExpediaHackathonAPP
         };
         uploader.onBeforeUploadItem = function(item) {
             console.info('onBeforeUploadItem', item);
+            $rootScope.startAnalysis = true;
         };
         uploader.onProgressItem = function(fileItem, progress) {
             console.info('onProgressItem', fileItem, progress);
@@ -678,6 +697,7 @@ ExpediaHackathonAPP
         
 
         var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
+        $scope.mediaTags.push(mediaTags);
         console.info('mediaTags', mediaTags);
 
         var amenities = ImageTagging.getAmenities('2280482');

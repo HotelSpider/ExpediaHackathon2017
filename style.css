@@ -11,3 +11,44 @@ canvas {
     height: 100px;
     margin: 6px 0 0 6px;
 }
+
+#myTabContent { padding: 20px; }
+
+#myNavBar {
+    border: 0;
+    border-radius: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+#explanation {
+    position: fixed;
+    z-index: 999;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    top: 140px;
+    margin: auto;
+    left: 440px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+     font-size: 14px;    
+}
+
+#explanation ul {
+    margin:0;
+}
+
+#explanation ul li {
+    padding-bottom: 10px;
+}
+
+#explanation ul li img {
+    height:20px;
+}
