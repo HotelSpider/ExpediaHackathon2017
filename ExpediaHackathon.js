@@ -205,7 +205,7 @@ ExpediaHackathonAPP
             });
 
             $timeout(function(){
-                $rootScope.nearByAiport = airportFound;
+                $rootScope.nearByAirport = airportFound;
 
                 console.info('nearest airport (km)', airportFound.name + ' ' + airportFound.distance);
             }, 2000);
@@ -556,8 +556,8 @@ ExpediaHackathonAPP
                 var geoLocationData = {
                     subwayDist : $rootScope.subwaystation?$rootScope.subwaystation.distance:100000,
                     subwayName : $rootScope.subwaystation?$rootScope.subwaystation.name:'',
-                    airportDist : $rootScope.airport?$rootScope.airport.distance:100000,
-                    airportName : $rootScope.airport?$rootScope.airport.name:'',
+                    airportDist : $rootScope.nearByAirport?$rootScope.nearByAirport.distance:100000,
+                    airportName : $rootScope.nearByAirport?$rootScope.nearByAirport.name:'',
                     trainStationDist : $rootScope.trainstation?$rootScope.trainstation.distance:100000,
                     trainStationName : $rootScope.trainstation?$rootScope.trainstation.name:'',
                     activities : $rootScope.activitiesFound,
