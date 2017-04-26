@@ -430,7 +430,7 @@ ExpediaHackathonAPP
 
         $rootScope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
         $rootScope.mediaTags = [];
-        $rootScope.mediaTags.push(mediaTags2);
+        //$rootScope.mediaTags.push(mediaTags2);
     })
     .config(function($httpProvider, $base64) {
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
@@ -451,9 +451,6 @@ ExpediaHackathonAPP
         });
             
             
-        $scope.mediaTags = [];
-        $scope.mediaTags = [];
-        $scope.mediaTags = [];
         
 
         // FILTERS
@@ -488,6 +485,9 @@ ExpediaHackathonAPP
             console.info('onProgressAll', progress);
         };
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
+            
+            $rootScope.mediaTags.push(ImageTagging.getMediaTags(fileItem.file.name));
+            
             console.info('onSuccessItem', fileItem, response, status, headers);
         };
         uploader.onErrorItem = function(fileItem, response, status, headers) {
