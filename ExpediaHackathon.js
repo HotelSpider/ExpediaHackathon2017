@@ -1,5 +1,24 @@
 'use strict';
 
+ //Utils (source http://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
+            function degreesToRadians(degrees) {
+                return degrees * Math.PI / 180;
+            }
+
+            function distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {
+                var earthRadiusKm = 6371;
+
+                var dLat = degreesToRadians(lat2-lat1);
+                var dLon = degreesToRadians(lon2-lon1);
+
+                lat1 = degreesToRadians(lat1);
+                lat2 = degreesToRadians(lat2);
+
+                var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                return earthRadiusKm * c;
+            }
+
 /* App Module */
 
 var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
@@ -41,11 +60,14 @@ ExpediaHackathonAPP
         var mapOptions = null;
         var marker = null;
 
-        $rootScope.neighborhood = 'aaa';
+        $rootScope.neighborhood = '';
 
         $rootScope.activitiesFound = [];
 
         $rootScope.foundPOI = [];
+
+         $rootScope.trainstation = {};
+         $rootScope.subwaystation = {};
 
         $rootScope.fillInAddress = function(type){
         
@@ -111,7 +133,7 @@ ExpediaHackathonAPP
                 $rootScope.getTCSInformation();
                 $rootScope.getGooglePOI();
 
-                $rootScope.getNearByTrainStation();
+                $rootScope.getNearByPublicTransportation();
                 $rootScope.processPOI();
 
                 var geoLocationData = $rootScope.neighborhood.name;
@@ -190,12 +212,72 @@ ExpediaHackathonAPP
             $timeout(function(){
                 $rootScope.nearByAiport = airportFound;
 
-                console.info('nearest airport', airportFound.name + ' ' + airportFound.distance);
+                console.info('nearest airport (km)', airportFound.name + ' ' + airportFound.distance);
             }, 2000);
         };
 
         $rootScope.getNearByPublicTransportation = function(){
+            var request = {
+                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
+                types : ['train_station', 'subway_station'],
+                rankBy: google.maps.places.RankBy.DISTANCE
+            };
 
+
+            var trainstationFound = false;
+            var subwayFound = false;
+
+
+
+            var directionsService = new google.maps.DirectionsService();
+
+            var service = new google.maps.places.PlacesService(map);
+
+            var latitude1 = parseFloat($rootScope.PhysicalContact.Addresses.Address[0].Latitude);
+            var longitude1 =  parseFloat($rootScope.PhysicalContact.Addresses.Address[0].Longitude);
+            
+            service.nearbySearch(request, function(publictransports){
+                angular.forEach(publictransports, function(place, placeIndex){
+                    angular.forEach(place.types, function(type, indexType){
+                        if(type == 'train_station' && !trainstationFound){
+                            trainstationFound = true;
+console.log(place);
+                            
+                            var latitude2 = parseFloat(place.geometry.location.lat());
+                            var longitude2 = parseFloat(place.geometry.location.lng());
+
+                            var distance = distanceInKmBetweenEarthCoordinates(latitude1, longitude1, latitude2, longitude2);
+                            
+                            trainstationFound = true;
+                            $rootScope.trainstation = {
+                                name:place.name,
+                                distance:distance * 1000
+                            };
+
+
+                        }
+                        if(type == 'subway_station' && !subwayFound){
+                            trainstationFound = true;
+                            var latitude2 = parseFloat(place.geometry.location.lat());
+                            var longitude2 = parseFloat(place.geometry.location.lng());
+                           
+                            var distance = distanceInKmBetweenEarthCoordinates(latitude1, longitude1, latitude2, longitude2);
+                            
+                            trainstationFound = true;
+                            $rootScope.subwaystation = {
+                                name:place.name,
+                                distance:distance * 1000
+                            };
+                            
+                        }
+                    });
+                });
+                $timeout(function(){
+
+                    console.info('nearest trainstation (m)', $rootScope.trainstation.name + ' ' + $rootScope.trainstation.distance);
+                    console.info('nearest subway (m)', $rootScope.subwaystation.name + ' ' + $rootScope.subwaystation.distance);
+            }, 2000);
+            });
         };
 
         $rootScope.setMarker = function(lat, lng) {
@@ -212,43 +294,8 @@ ExpediaHackathonAPP
             map.setZoom(16);//zoom to marker
         };
 
-        $rootScope.getNearByTrainStation = function(){
-
-             var request = {
-                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
-                radius: '500',
-                type : 'train_station',
-                //rankBy :'prominence'
-            };
-
-
-            var service = new google.maps.places.PlacesService(map);
-            
-                service.nearbySearch(request, function(trainstations){
-                $rootScope.nearByTrainStation = trainstations;
-            });
-        };
 
         $rootScope.getTCSInformation = function(){
-
-            //Utils (source http://stackoverflow.com/questions/365826/calculate-distance-between-2-gps-coordinates)
-            function degreesToRadians(degrees) {
-                return degrees * Math.PI / 180;
-            }
-
-            function distanceInKmBetweenEarthCoordinates(lat1, lon1, lat2, lon2) {
-                var earthRadiusKm = 6371;
-
-                var dLat = degreesToRadians(lat2-lat1);
-                var dLon = degreesToRadians(lon2-lon1);
-
-                lat1 = degreesToRadians(lat1);
-                lat2 = degreesToRadians(lat2);
-
-                var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
-                var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-                return earthRadiusKm * c;
-            }
             //First identify the correct neighboorhood
             //Classify
             
