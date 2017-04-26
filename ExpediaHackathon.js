@@ -46,7 +46,7 @@ ExpediaHackathonAPP
         
         $rootScope.airbnbid = '9917391';
         
-        $rootScope.hotelname = 'Cosy appartement close to Eiffel Tower';
+        $rootScope.hotelname = 'Comantik Appartement';
 
         var autocomplete;
 
