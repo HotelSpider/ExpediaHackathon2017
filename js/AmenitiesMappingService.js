@@ -26,10 +26,14 @@ var AmenitiesMappingService = angular.module('AmenitiesMappingService', [])
 
         // init mapping
         propertyAmenitiesLUT['Terrace'] = ['terrace'];
+        propertyAmenitiesLUT['Free Wifi'] = ['freewifi', 'free wifi', 'wifi'];
+        propertyAmenitiesLUT['Free parking'] = ['freeparking', 'free parking', 'parking'];
 
         roomAmenitiesLUT['Terrace'] = ['terrace'];
         roomAmenitiesLUT['Microwave'] = ['microwave'];
         roomAmenitiesLUT['Refrigerator'] = ['fridge'];
+        roomAmenitiesLUT['Kitchen'] = ['kitchen'];
+        roomAmenitiesLUT['Private bathroom'] = ['bathroom'];
 
         // public methods
         this.getPropertyAmenities = function (amenities, reviewKeywords) {
