@@ -565,6 +565,7 @@ ExpediaHackathonAPP
                     activities : $rootScope.activitiesFound,
                     poi : $rootScope.foundPOI
                 };
+                console.log($rootScope.hotelname);
                 $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.hotelname, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
 
                 console.info('propertyDescription', $rootScope.propertyDescription);
