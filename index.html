@@ -279,7 +279,7 @@
 							 <h4>Property photos</h4>
                               <div ng-show="mediaTags">
 								<ul class="list-unstyled list-inline">
-									<li ng-repeat="media in mediaTags track by filename" ng-if="media.type == 'property'">
+									<li ng-repeat="media in mediaTags track by $index" ng-if="media.type == 'property'">
 										<img ng-src="uploads/{{media.filename}}" width=150 />
 									</li>
 								</ul>
@@ -347,7 +347,7 @@
 
 							<div ng-show="mediaTags">
 								<ul class="list-unstyled list-inline">
-									<li ng-repeat="media in mediaTags track by filename" ng-if="media.type != 'property'">
+									<li ng-repeat="media in mediaTags track by $index" ng-if="media.type != 'property'">
 										<img ng-src="uploads/{{media.filename}}" width=150 />
 									</li>
 								</ul>
