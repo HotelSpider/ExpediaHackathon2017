@@ -485,7 +485,7 @@ ExpediaHackathonAPP
         $rootScope.mediaTags = [];
         $rootScope.amenities = [];
         //$rootScope.mediaTags.push(mediaTags2);
-        $rootScope.propertyAmenities = propertyAmenities;
+        //$rootScope.propertyAmenities = propertyAmenities;
     })
     .config(function($httpProvider, $base64) {
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
