@@ -1,10 +1,47 @@
 var featuredAmenitiesFullList = [
+      'Free Wifi',
+      'Free wired Internet',
+      'Free Babysitting',
+      'Babysitting with surcharge',
+      'Free children club',
+      'Children club with surcharge',
+      'Accessible bathroom',
+      'Braille signage',
+      'Equipment for deaf',
+      'Accessible rooms',
+      'Accessible parking',
+      'Accessible path of travel',
+      'Roll in shower',
+      'Elevator',
+      'Allergy friendly',
+      'Business center',
+      'Free newspaper',
+      'Free breakfast',
+      'Fitness facilities',
+      'Health club',
+      'Spa',
+      'Sauna',
+      'Concierge service',
+      'Dry cleaning',
+      'Hair salon',
+      'Private pool',
+      'Private indoor pool',
+      'Terrace',
+      'Rooftop terrace',
+      'Free airport pickup',
+      'Free airport dropoff',
+      'Free parking',
+      'Paid parking',
+      'Free valet parking',
+      'Paid valet parking',
+      'Garden',
+      'BBQ grills',
+  ];
+
+var roomAmenitiesFullList = [
       '2 Bathrooms',
-      'Allergy Friendly',
       'Balcony',
       'Bathtub',
-      'Business Lounge Access',
-      'Concierge Service',
       'Connecting Rooms',
       'Ensuite',
       'Fireplace',
@@ -16,17 +53,11 @@ var featuredAmenitiesFullList = [
       'Microwave',
       'No Windows',
       'Patio',
-      'Pool Access',
       'Private Bathroom',
-      'Private Pool',
       'Refrigerator',
       'Refrigerator & Microwave',
-      'Sauna',
-      'Shared Bathroom',
-      'Terrace'
-  ];
-
-var roomAmenitiesFullList = [];
+      'Shared Bathroom'
+];
 
 var viewsFullList = [
     'Bay View',
