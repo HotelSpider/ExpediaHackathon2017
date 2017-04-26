@@ -31,7 +31,7 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
         this.getPropertyDescription = function (propertyName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData) {
 
             var location = getLocation(reviewKeywords.Location);
-
+console.log(propertyName);
             var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped {amenities}.\n';
 
             // subway access
