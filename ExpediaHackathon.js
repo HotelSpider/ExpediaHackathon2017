@@ -345,38 +345,35 @@ ExpediaHackathonAPP
             var cityActivities = [];
           
             //Get the TCS Activities for the city and split the content per region
-            $http({
-                method:'GET',
-                url:'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/' + regionId + '?langId=EN&sections=ACTIVITY&version=2&useCache=true'
-            }).then(function(activities, status){
 
-                 //Load the activities for the particular neighboorhood
-                var activitiesDb;
+             //Load the activities for the particular neighboorhood
+            var activitiesDb;
 
-                if(city == 'Madrid'){
-                    activitiesDb = activitiesMadrid;
-                }else if (city == 'Paris'){
-                    activitiesDb = activitiesParis;
-                }else if(city == 'New York'){          
-                    activitiesDb = activitiesNewYork;
-                }
+            if(city == 'Madrid'){
+                activitiesDb = activitiesMadrid;
+            }else if (city == 'Paris'){
+                activitiesDb = activitiesParis;
+            }else if(city == 'New York'){          
+                activitiesDb = activitiesNewYork;
+            }
 
 
-                //array id => activity
-                var cityActivities = {};
-                var activitiesFound = [];
-                angular.forEach(activitiesDb, function(activity, indexActivity){
-                    cityActivities[activity.id] = activity;
-                });
-
-                angular.forEach(activities.data.sections.data, function(activity, indexActivity){
-                    if(typeof data.activity_id != 'undefined' && distanceInKmBetweenEarthCoordinates(activity.destination.geo.latitude, activity.destination.geo.longitude, parseFloat(Address.Latitude), parseFloat(Address.Longitude))<= 0.5){
-                        activitiesFound.push(cityActivities[activity.sections.activity.id]);
-                    }                
-                });
-
-                $rootScope.activitiesFound = activitiesFound;
+            //array id => activity
+            var cityActivities = {};
+            var activitiesFound = [];
+            angular.forEach(activitiesDb, function(activity, indexActivity){
+                cityActivities[activity.id] = activity;
             });
+
+            var activities = activitiesTCSParis;
+            
+            angular.forEach(activities.sections.activity.data, function(activity, indexActivity){
+                if(typeof activity.activityId != 'undefined' && distanceInKmBetweenEarthCoordinates(activity.destination.geo.latitude, activity.destination.geo.longitude, parseFloat(Address.Latitude), parseFloat(Address.Longitude))<= 1){
+                    activitiesFound.push(cityActivities[activity.activityId]);
+                }                
+            });
+
+            $rootScope.activitiesFound = activitiesFound;
             
 
         };
@@ -438,10 +435,10 @@ ExpediaHackathonAPP
             //TCS
             angular.forEach($rootScope.activitiesFound, function (activity, indexActivity){
                 angular.forEach(activity.categories, function(category, indexCategory){
-                    if(typeof $rootScope.classifiedPOI[type] === 'undefined'){
+                    if(typeof $rootScope.classifiedPOI[category.toLowerCase()] === 'undefined'){
                      $rootScope.classifiedPOI[category.toLowerCase()] = []
                     }  
-                    $rootScope.classifiedPOI[category.toLowerCase()].push(POI);
+                    $rootScope.classifiedPOI[category.toLowerCase()].push(activity);
                 });
                
             });
