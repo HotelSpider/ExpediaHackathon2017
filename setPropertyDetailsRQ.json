@@ -1,0 +1,114 @@
+[
+	{
+		"providerPropertyId": "00F1234567",
+		"name": "Super appartement close to Tour Eiffel",
+		"latitude": "48.8595614",
+		"longitude": "2.28904239",
+		"providerPropertyUrl": "https://www.hotel-spider.ch",
+		"structureType": "Hotel",
+		"currencyCode": "EUR",
+		"billingCurrencyCode": "EUR",
+		"timeZone": "Europe/Paris",
+		"addresses": [
+			{
+				"line1": "56 Avenue de New York",
+				"city": "paris",
+				"state": "",
+				"postalCode": "75016",
+				"countryCode": "FRANCE"
+			}
+		],
+		"contacts": {
+			"Property": {
+				"phoneNumbers": [
+					{
+						"phoneNumberType": "Phone",
+						"countryAccessCode": "41",
+						"areaCode": "123",
+						"number": "1234567"
+					}
+				]
+			},
+			"ReservationManager": {
+				"firstName": "First",
+				"lastName": "Last",
+				"emails": [
+					"abc@xyz.com"
+				],
+				"phoneNumbers": [
+					{
+						"phoneNumberType": "Phone",
+						"countryAccessCode": "1",
+						"areaCode": "123",
+						"number": "4567890"
+					},
+					{
+						"phoneNumberType": "Fax",
+						"countryAccessCode": "1",
+						"areaCode": "123",
+						"number": "7890123"
+					}
+				]
+			},
+			"AlternateReservationManager": {
+				"phoneNumbers": [
+					{
+						"phoneNumberType": "Phone",
+						"countryAccessCode": "1",
+						"areaCode": "123",
+						"number": "1234567"
+					}
+				]
+			},
+			"GeneralManager": {
+				"firstName": "General",
+				"lastName": "Manager",
+				"emails": [
+					"abc123@xyz.com"
+				]
+			}
+		},
+		"contents": [
+			{
+				"locale": "fr-FR",
+				"name": "Localized Property Name"
+			}
+		],
+		"propertyCollectedMandatoryFees": [
+			{
+				"code": "RESORT_FEE",
+				"scope": "PER_PERSON",
+				"duration": "PER_NIGHT",
+				"value": 25.99,
+				"startDate": null,
+				"endDate": null
+			}
+		],
+		"taxes": [
+			{
+				"code": "VAT",
+				"detailCode": "PERCENT_PER_STAY",
+				"value": 20
+			}
+		],
+		"policies": [
+			{
+				"code": "MINIMUM_CHECKIN_AGE",
+				"value": "18"
+			}
+		],
+		"inventorySettings": {
+			"rateAcquisitionType": "NET_RATE",
+			"distributionModels": [
+				"EXPEDIA_COLLECT",
+				"HOTEL_COLLECT"
+			]
+		},
+		"attributes": [
+			{
+				"code": "TOTAL_ROOMS",
+				"value": "1"
+			}
+		]
+	}
+]

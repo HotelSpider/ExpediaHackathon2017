@@ -1,0 +1,133 @@
+{
+  "entity": [
+    {
+      "providerPropertyId": "00F1234567",
+      "provider": "Test",
+      "expediaId": null,
+      "name": "Super appartement close to Tour Eiffel",
+      "latitude": "48.8595614",
+      "longitude": "2.28904239",
+      "createdUtc": "0001-01-01T00:00:00",
+      "modifiedUtc": "2017-04-26T10:26:36.1964264Z",
+      "providerPropertyUrl": "https://www.hotel-spider.ch",
+      "structureType": "Hotel",
+      "currencyCode": "EUR",
+      "billingCurrencyCode": "EUR",
+      "timeZone": "Europe/Paris",
+      "addresses": [
+        {
+          "line1": "56 Avenue de New York",
+          "line2": null,
+          "city": "paris",
+          "state": "",
+          "postalCode": "75016",
+          "countryCode": "FRA"
+        }
+      ],
+      "ratings": [],
+      "contacts": {
+        "Property": {
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "41",
+              "areaCode": "123",
+              "number": "1234567"
+            }
+          ]
+        },
+        "ReservationManager": {
+          "firstName": "First",
+          "lastName": "Last",
+          "emails": [
+            "abc@xyz.com"
+          ],
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "4567890"
+            },
+            {
+              "phoneNumberType": "Fax",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "7890123"
+            }
+          ]
+        },
+        "AlternateReservationManager": {
+          "phoneNumbers": [
+            {
+              "phoneNumberType": "Phone",
+              "countryAccessCode": "1",
+              "areaCode": "123",
+              "number": "1234567"
+            }
+          ]
+        },
+        "GeneralManager": {
+          "firstName": "General",
+          "lastName": "Manager",
+          "emails": [
+            "abc123@xyz.com"
+          ]
+        }
+      },
+      "airports": [
+        {
+          "code": "XGB",
+          "name": "Gare Montparnasse"
+        }
+      ],
+      "contents": [
+        {
+          "locale": "fr-FR",
+          "name": "Localized Property Name",
+          "providerPropertyUrl": null,
+          "images": [],
+          "amenities": [],
+          "paragraphs": []
+        }
+      ],
+      "propertyCollectedMandatoryFees": [
+        {
+          "code": "RESORT_FEE",
+          "scope": "PER_PERSON",
+          "duration": "PER_NIGHT",
+          "value": 25.99,
+          "startDate": null,
+          "endDate": null
+        }
+      ],
+      "taxes": [
+        {
+          "code": "VAT",
+          "detailCode": "PERCENT_PER_STAY",
+          "value": 20
+        }
+      ],
+      "policies": [
+        {
+          "code": "MINIMUM_CHECKIN_AGE",
+          "detailCode": null,
+          "value": "18"
+        }
+      ],
+      "inventorySettings": {
+        "rateAcquisitionType": null,
+        "distributionModels": []
+      },
+      "attributes": [
+        {
+          "code": "TOTAL_ROOMS",
+          "value": "1"
+        }
+      ],
+      "status": {
+        "href": "/properties/v1/test/00f1234567/status"
+      }
+    }
+  ]
+}

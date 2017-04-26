@@ -1,0 +1,64 @@
+{
+        "partnerCode": "MyStringCode",
+        "name": {
+            "attributes": {
+                "typeOfRoom": "Penthouse",
+                "roomClass": "Executive",
+                "includeBedType": true,
+                "view": "City View",
+                "featuredAmenity": "Jetted Tub",
+                "customLabel": "Rooftop Terrace"
+            }
+        },
+        "ageCategories": [
+            {
+                "category": "Adult", 
+                "minAge": 18
+            }, 
+            {
+                "category": "ChildAgeA", 
+                "minAge": 6
+            }, 
+            {
+                "category": "Infant", 
+                "minAge": 0
+            }
+        ], 
+        "maxOccupancy": {
+            "adults": 2, 
+            "children": 1, 
+            "total": 3
+        }, 
+        "standardBedding": [
+            {
+                "option": [
+                    {
+                        "quantity": 1,
+                        "type": "King Bed"
+                    }
+                ]
+            }
+        ], 
+        "extraBedding": [
+            {
+                "quantity": 1,
+                "type": "Rollaway Bed",
+                "size": "Full",
+                "surcharge": {
+                    "type": "Per Day",
+                    "amount": 20
+                }
+            }
+        ],
+        "smokingPreferences": [
+            "Non-Smoking"
+        ],
+        "roomSize": {
+            "squareFeet": 300,
+            "squareMeters": 14
+        },
+        "views": [
+            "Ocean View",
+            "Beach View"
+        ]
+}

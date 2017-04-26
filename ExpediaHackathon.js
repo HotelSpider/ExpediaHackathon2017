@@ -577,151 +577,170 @@ ExpediaHackathonAPP
 
         console.info('uploader', uploader);
 
-        $scope.Property = {
-            "providerPropertyId": "1289472",
-            "name": "Peach Inn",
-            "latitude": "23.3752",
-            "longitude": "-81.3261",
-            "providerPropertyUrl": "http://example.org",
-            "structureType": "Hotel",
-            "currencyCode": "USD",
-            "billingCurrencyCode": "USD",
-            "timeZone": "America/Los_Angeles",
-            "addresses": [
-                {
-                    "line1": "123 Main St.",
-                    "city": "B. Hills",
-                    "state": "CA",
-                    "postalCode": "90210",
-                    "countryCode": "USA"
-                }
-            ],
-            "ratings": [
-                {
-                    "score": 4,
-                    "maxScore": 5,
-                    "source": "AAA",
-                    "description": "STARS"
-                }
-            ],
-            "contacts": {
-                "Property": {
-                    "phoneNumbers": [
-                        {
-                            "phoneNumberType": "Phone",
-                            "countryAccessCode": "1",
-                            "areaCode": "123",
-                            "number": "1234567"
-                        }
+       
+        
+        $scope.saveProperty = function(){
+            var Property = [
+            {
+                "providerPropertyId": "00F1234567",
+                "name": $rootScope.hotelname,
+                "latitude": PhysicalContact.Addresses.Address[0].Latitude,
+                "longitude": PhysicalContact.Addresses.Address[0].Longitude,
+                "providerPropertyUrl": "https://www.hotel-spider.ch",
+                "structureType": $rootScope.propertyType,
+                "currencyCode": "EUR",
+                "billingCurrencyCode": "EUR",
+                "timeZone": "Europe/Paris",
+                "addresses": [
+                    {
+                        "line1": "56 Avenue de New York",
+                        "city": "paris",
+                        "state": "",
+                        "postalCode": "75016",
+                        "countryCode": "FRANCE"
+                    }
+                ],
+                "contacts": {
+                    "Property": {
+                        "phoneNumbers": [
+                            {
+                                "phoneNumberType": "Phone",
+                                "countryAccessCode": "41",
+                                "areaCode": "123",
+                                "number": "1234567"
+                            }
+                        ]
+                    },
+                    "ReservationManager": {
+                        "firstName": "First",
+                        "lastName": "Last",
+                        "emails": [
+                            "abc@xyz.com"
+                        ],
+                        "phoneNumbers": [
+                            {
+                                "phoneNumberType": "Phone",
+                                "countryAccessCode": "1",
+                                "areaCode": "123",
+                                "number": "4567890"
+                            },
+                            {
+                                "phoneNumberType": "Fax",
+                                "countryAccessCode": "1",
+                                "areaCode": "123",
+                                "number": "7890123"
+                            }
+                        ]
+                    },
+                    "AlternateReservationManager": {
+                        "phoneNumbers": [
+                            {
+                                "phoneNumberType": "Phone",
+                                "countryAccessCode": "1",
+                                "areaCode": "123",
+                                "number": "1234567"
+                            }
+                        ]
+                    },
+                    "GeneralManager": {
+                        "firstName": "General",
+                        "lastName": "Manager",
+                        "emails": [
+                            "abc123@xyz.com"
+                        ]
+                    }
+                },
+                "contents": [
+                    {
+                        "locale": "fr-FR",
+                        "name": "Localized Property Name",
+                        "images": [
+                            {
+                                "url": "http://images.xyz.com/mainImage.jpg",
+                                "categoryCode": "FEATURED_IMAGE",
+                                "caption": "Main Image"
+                            }
+                        ],
+                        "amenities": [
+                              {
+                                "code": "WIFI_INTERNET",
+                                "detailCode": "SURCHARGE_PER_STAY",
+                                "value": 10.99
+                            }
+                        ],
+                        "paragraphs": [
+                            {
+                                "code": "DESCRIPTION",
+                                "value": "Property description."
+                            }
+                        ]
+                    }
+                ],
+                "propertyCollectedMandatoryFees": [
+                    {
+                        "code": "RESORT_FEE",
+                        "scope": "PER_PERSON",
+                        "duration": "PER_NIGHT",
+                        "value": 25.99,
+                        "startDate": null,
+                        "endDate": null
+                    }
+                ],
+                "taxes": [
+                    {
+                        "code": "VAT",
+                        "detailCode": "PERCENT_PER_STAY",
+                        "value": 20
+                    }
+                ],
+                "policies": [
+                    {
+                        "code": "MINIMUM_CHECKIN_AGE",
+                        "value": "18"
+                    }
+                ],
+                "inventorySettings": {
+                    "rateAcquisitionType": "NET_RATE",
+                    "distributionModels": [
+                        "EXPEDIA_COLLECT",
+                        "HOTEL_COLLECT"
                     ]
                 },
-                "ReservationManager": {
-                    "firstName": "First",
-                    "lastName": "Last",
-                    "emails": [
-                        "abc@xyz.com"
-                    ],
-                    "phoneNumbers": [
-                        {
-                            "phoneNumberType": "Phone",
-                            "countryAccessCode": "1",
-                            "areaCode": "123",
-                            "number": "4567890"
-                        },
-                        {
-                            "phoneNumberType": "Fax",
-                            "countryAccessCode": "1",
-                            "areaCode": "123",
-                            "number": "7890123"
-                        }
-                    ]
-                },
-                "AlternateReservationManager": {
-                    "phoneNumbers": [
-                        {
-                            "phoneNumberType": "Phone",
-                            "countryAccessCode": "1",
-                            "areaCode": "123",
-                            "number": "1234567"
-                        }
-                    ]
-                },
-                "GeneralManager": {
-                    "firstName": "General",
-                    "lastName": "Manager",
-                    "emails": [
-                        "abc123@xyz.com"
-                    ]
-                }
-            },
-            "contents": [
-                {
-                    "locale": "en-US",
-                    "name": "Localized Property Name",
-                    "providerPropertyUrl": null,
-                    /*"images": [
-                        {
-                            "url": "http://images.xyz.com/mainImage.jpg",
-                            "categoryCode": "FEATURED_IMAGE",
-                            "caption": "Main Image"
-                        }
-                    ],
-                    "amenities": [
-                          {
-                            "code": "WIFI_INTERNET",
-                            "detailCode": "SURCHARGE_PER_STAY",
-                            "value": 10.99
-                        }
-                    ],
-                    "paragraphs": [
-                        {
-                            "code": "DESCRIPTION",
-                            "value": "Property description."
-                        },
-                        {
-                            "code": "SPECIAL_CHECKIN_INSTRUCTIONS",
-                            "value": "Special check-in instructions."
-                        }
-                    ]*/
-                }
-            ],
-            "propertyCollectedMandatoryFees": [
-                {
-                    "code": "RESORT_FEE",
-                    "scope": "PER_PERSON",
-                    "duration": "PER_NIGHT",
-                    "value": 25.99,
-                    "startDate": null,
-                    "endDate": null
-                }
-            ],
-            "taxes": [
-                {
-                    "code": "VAT",
-                    "detailCode": "PERCENT_PER_STAY",
-                    "value": 20
-                }
-            ],
-            "policies": [
-                {
-                    "code": "MINIMUM_CHECKIN_AGE",
-                    "value": "18"
-                }
-            ],
-            "inventorySettings": {
-                "rateAcquisitionType": "NET_RATE",
-                "distributionModels": [
-                    "EXPEDIA_COLLECT",
-                    "HOTEL_COLLECT"
+                "attributes": [
+                    {
+                        "code": "TOTAL_ROOMS",
+                        "value": "1"
+                    }
                 ]
-            },
-            "attributes": [
-                {
-                    "code": "TOTAL_ROOMS",
-                    "value": "15"
+            }
+        ];
+            // images
+            Property[0].contents.images = [];
+            angular.forEach( $rootScope.mediaTags, function(media, key){
+                if ( media.type == 'property' ) {
+                    Property[0].contents.images.push(
+                            {
+                                "url": "http://35.158.79.41/ExpediaHackathon2017/uploads/" + media.filename
+                            }
+                        );
                 }
-            ]
-        };
+            });
+            
+            Property[0].contents.paragraph[0] = {
+                code : 'DESCRIPTION',
+                value : $rootScope.propertyDescription
+            };
+            
+            Property[0].contents.amenities = [];
+            angular.forEach( $rootScope.propertyAmenities, function(value, key){
+                Property[0].contents.amenities.push({
+                    code : key    
+                });
+            });
+            
+            console.log(Property)
+            
+        }
         
         $scope.PropertyRoom = {
             "partnerCode": "MyStringCode",
