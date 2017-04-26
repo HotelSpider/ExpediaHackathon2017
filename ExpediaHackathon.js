@@ -17,13 +17,13 @@ ExpediaHackathonAPP
     .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
 
         $rootScope.featuredAmenityEnum = featuredAmenitiesFullList;
-        $rootScope.roomAmenities = roomAmenitiesFullList;
+        $rootScope.roomAmenitiesList = roomAmenitiesFullList;
 
         $rootScope.viewEnum = viewsFullList;
         
         $rootScope.startAnalysis = true;
         
-        $rootScope.step = 3;
+        $rootScope.step = 1;
 
         var autocomplete;
 
@@ -405,8 +405,8 @@ ExpediaHackathonAPP
             $rootScope.initializePhysicalAutoComplete();
         }, 1000);
 
-        var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
-        console.info('mediaTags', mediaTags);
+        var mediaTags2 = ImageTagging.getMediaTags('2280482_01.jpg');
+        console.info('mediaTags', mediaTags2);
 
         var amenities = ImageTagging.getAmenities('2280482');
         console.info('amenities', amenities);
@@ -428,8 +428,9 @@ ExpediaHackathonAPP
         var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
         console.info('propertyDescription', propertyDescription);
 
-        $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
-        $scope.mediaTags.push(mediaTags);
+        $rootScope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
+        $rootScope.mediaTags = [];
+        $rootScope.mediaTags.push(mediaTags2);
     })
     .config(function($httpProvider, $base64) {
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
