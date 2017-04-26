@@ -270,7 +270,7 @@
 						<div class="form-group">
 							<ul class="list-inline">
 								<li ng-repeat="amen in featuredAmenityEnum">
-									<input type="checkbox" ng-model="HotelAmenities[ amen ]" ng-true-value="1" ng-false-value="0" />
+									<input type="checkbox" ng-model="propertyAmenities[ amen ]" ng-true-value="1" ng-false-value="0" />
 									<label>{{amen}}</label>
 								</li>
 							</ul>
@@ -335,8 +335,8 @@
 						  <label>Room amenities</label>
 						  <div class="form-group">
 							  <ul class="list-inline">
-								  <li ng-repeat="amen in roomAmenities">
-									  <input type="checkbox" ng-model="roomAmenitiesList[ amen ]" ng-true-value="1" ng-false-value="0" />
+								  <li ng-repeat="amen in roomAmenitiesList">
+									  <input type="checkbox" ng-model="roomAmenities[ amen ]" ng-true-value="1" ng-false-value="0" />
 									  <label>{{amen}}</label>
 								  </li>
 							  </ul>
