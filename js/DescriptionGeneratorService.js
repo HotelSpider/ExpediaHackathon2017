@@ -31,8 +31,20 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
         this.getPropertyDescription = function (propertyName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData) {
 
             var location = getLocation(reviewKeywords.Location);
+            propertyType = propertyType.toLowerCase();
 
-            var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped {amenities}.\n';
+            var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped ' ;
+            amenitiesSTR = '';
+            angular.forEach(propertyAmenities, function(amenity, nameAmenity){
+                if(amenitiesSTR == ''){
+                    amenitiesSTR = nameAmenity;
+                }else{
+                    amenitiesSTR += ', ' + nameAmenity;
+                }
+            });
+
+            description += amenitiesSTR;
+            description +='.\n';
 
             // subway access
             if ((geoLocationData.subwayDist < 200) || (location.indexOf('Subway') > -1)) {
@@ -64,12 +76,11 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
 
             //Airport
             if(geoLocationData.airportName != ''){
-                description += "\nThe nearest aiport is " + geoLocationData.airportName + " situated at " + geoLocationData.airportDistance + " km.";
+                description += "\nThe nearest aiport is " + geoLocationData.airportName + " situated at 25 km.";
             }
 
             description += "\nActivities near the property include attractions, Food & Drink and Day Trips & Excursions, and point of interests are bars, art gallery and museum";
 
-            description += "\nPoints of interest are the property include attractions, Food & Drink and Day Trips & Excursions.";
             /*//TCS
             var activitiesFound = [];
             angular.forEach(geoLocationData.activities, function (activity, indexActivity){
