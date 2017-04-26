@@ -78,12 +78,6 @@ ExpediaHackathonAPP
                 }else if( item.types[0] == 'postal_code' )
                     $rootScope.PhysicalContact.Addresses.Address[0].PostalCode = item.long_name;
             });
-           
-            $rootScope.getTCSInformation();
-            $rootScope.getGooglePOI();
-            $rootScope.getNearByAirport();
-            $rootScope.getNearByTrainStation();
-            $rootScope.processPOI();
 
             $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
 
@@ -108,6 +102,13 @@ ExpediaHackathonAPP
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 $rootScope.fillInAddress('Physical');
 
+                $rootScope.getNearByAirport();           
+                $rootScope.getTCSInformation();
+                $rootScope.getGooglePOI();
+
+                $rootScope.getNearByTrainStation();
+                $rootScope.processPOI();
+
                 var geoLocationData = $rootScope.neighborhood.name;
                 console.info('geoLocationData', geoLocationData);
 
@@ -124,17 +125,72 @@ ExpediaHackathonAPP
         };
 
         $rootScope.getNearByAirport = function(){
-             var request = {
-                location: new google.maps.LatLng($rootScope.PhysicalContact.Addresses.Address[0].Latitude, $rootScope.PhysicalContact.Addresses.Address[0].Longitude),
-                radius: '50000',
-                type : 'airport',
-                //rankBy :'prominence'
-            };
+            var airports = [
+                {
+                    "location" : {
+                       "lat" : 49.0096906,
+                       "lng" : 2.547924499999999
+                    },
+                    "name" : "Paris-Charles De Gaulle"
+                },
+                {
+                    "location" : {
+                       "lat" : 48.9614725,
+                       "lng" : 2.437202
+                    },
+                    "name" : "Aeroport de Paris - Le Bourget",
+                },
+                {
+                    "location" : {
+                       "lat" : 48.7262433,
+                       "lng" : 2.3652472
+                    },
+                    "name" : "Aeroport de Paris-Orly",
+                }
+            ];
 
-            var service = new google.maps.places.PlacesService(map);
-                service.nearbySearch(request, function(airport){
-                $rootScope.nearByAirport = airport;
+            var directionsService = new google.maps.DirectionsService();
+
+
+            var latitude1 = $rootScope.PhysicalContact.Addresses.Address[0].Latitude;
+            var longitude1 =  $rootScope.PhysicalContact.Addresses.Address[0].Longitude;
+
+            var airportFound = null;
+            var currentDistance = -1;
+
+            angular.forEach(airports, function(airport, indexAirport){
+
+
+                var latitude2 = airport.location.lat;
+                var longitude2 = airport.location.lng;
+                var request = {
+                       origin: new google.maps.LatLng(latitude1, longitude1), 
+                       destination:new google.maps.LatLng(latitude2, longitude2),
+                       travelMode: google.maps.DirectionsTravelMode.DRIVING
+                   };
+
+                   directionsService.route(request, function(response, status) {
+                        var distance = response.routes[0].legs[0].distance.value;
+                        
+                        if(currentDistance < 0 || distance < currentDistance){
+                            currentDistance = distance;
+                            airportFound = {
+                                name:airport.name,
+                                distance:distance / 1000
+                            };
+                        }
+                    });
             });
+
+            $timeout(function(){
+                $rootScope.nearByAiport = airportFound;
+
+                console.info('nearest airport', airportFound.name + ' ' + airportFound.distance);
+            }, 2000);
+        };
+
+        $rootScope.getNearByPublicTransportation = function(){
+
         };
 
         $rootScope.setMarker = function(lat, lng) {
