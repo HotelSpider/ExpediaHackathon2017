@@ -535,6 +535,7 @@ ExpediaHackathonAPP
             console.info('amenities', amenities);
             
             var prom = ReviewAnalyser.analyseReviews($rootScope.airbnbid);
+            console.log($rootScope.hotelname);
             prom.then(function (reviewKeywords) {
                 console.info('reviewKeywords', reviewKeywords);
     
@@ -565,7 +566,7 @@ ExpediaHackathonAPP
                     activities : $rootScope.activitiesFound,
                     poi : $rootScope.foundPOI
                 };
-                console.log($rootScope.hotelname);
+                
                 $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.hotelname, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
 
                 console.info('propertyDescription', $rootScope.propertyDescription);
