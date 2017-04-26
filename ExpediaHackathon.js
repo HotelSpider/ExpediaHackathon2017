@@ -50,8 +50,6 @@ ExpediaHackathonAPP
 
         var autocomplete;
 
-        $rootScope.hotelname = '';
-
         $rootScope.PhysicalContact = {
             Addresses : {
                 Address :[
