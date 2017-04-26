@@ -46,6 +46,66 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
             removeFromArray(location, 'Subway');
             description += '\n' + propertyName + ' is ideally located near ' + location.join();
 
+            //Airport
+            if(geoLocationData.airportName != ''){
+                description += "\nThe nearest aiport is " + geoLocationData.airportName + " situated at " + geoLocationData.airportDistance;
+            }
+
+            //TCS
+            var activitiesFound = [];
+            angular.forEach(geoLocationData.activities, function (activity, indexActivity){
+                angular.forEach(activity.categories, function(category, indexCategory){
+                    if(typeof activitiesFound[category] === 'undefined'){
+                        activitiesFound[category.toLowerCase()] = []
+                    }  
+                    activitiesFound[category.toLowerCase()].push(POI);
+                });
+               
+            });
+
+            //GOOGLE POI
+            var classifiedPOI = {};
+            angular.forEach(geoLocationData.POI, function (POI, indexPOI){
+                angular.forEach(POI.types, function(type, indexType){
+                    if(typeof classifiedPOI[type] === 'undefined'){
+                         classifiedPOI[type.toLowerCase()] = []
+                    }  
+                    classifiedPOI[type.toLowerCase()].push(POI);
+                });
+            });
+
+            //TCS
+            if(activitiesFound.length == 1){
+                description += ' and near some ' + activitiesFound[0];
+            }else{
+                description += '. Activities near the property are: ';
+                var activities = '';
+                angular.forEach(activitiesFound, function (category, indexCategory){
+                        if(activities == ''){
+                            activities = category;
+                        }else{
+                            activities += ', ' + category;
+                        }  
+                });
+                description += activities;
+            }
+
+            // POI
+            if(classifiedPOI.length == 1){
+                description += '. You will find next to it ' + geoLocationData.POI[0].name;
+            }else{
+                description += '. Point of interests near the property includes: ';
+                var types = '';
+                angular.forEach(classifiedPOI, function(type, indexCategory){
+                    if(types == ''){
+                        types = type;
+                    }else{
+                        types += ', ' + type;
+                    }   
+                });
+                description += types;
+            }
+
             return description;
         };
 

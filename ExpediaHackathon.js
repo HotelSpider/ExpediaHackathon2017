@@ -381,7 +381,7 @@ ExpediaHackathonAPP
         $rootScope.getGooglePOI = function(){
 
             var blacklistTypes = ['political'];
-            var blacklistName = ['Hotel', 'hotel', 'hôtel', 'Hôtel'];
+            var blacklistName = ['Hotel', 'hotel', 'hôtel', 'Hôtel', 'tel', 'Palace'];
             var foundPOI = [];
  
              var request = {
@@ -419,31 +419,7 @@ ExpediaHackathonAPP
         };
 
         $rootScope.classifiedPOI = {};
-        $rootScope.processPOI = function(){
-
-
-            //GOOGLE POI
-            angular.forEach($rootScope.foundPOI, function (POI, indexPOI){
-                angular.forEach(POI.types, function(type, indexType){
-                    if(typeof $rootScope.classifiedPOI[type] === 'undefined'){
-                         $rootScope.classifiedPOI[type.toLowerCase()] = []
-                    }  
-                    $rootScope.classifiedPOI[type.toLowerCase()].push(POI);
-                });
-            });
-
-            //TCS
-            angular.forEach($rootScope.activitiesFound, function (activity, indexActivity){
-                angular.forEach(activity.categories, function(category, indexCategory){
-                    if(typeof $rootScope.classifiedPOI[category.toLowerCase()] === 'undefined'){
-                     $rootScope.classifiedPOI[category.toLowerCase()] = []
-                    }  
-                    $rootScope.classifiedPOI[category.toLowerCase()].push(activity);
-                });
-               
-            });
-
-        };
+ 
 
         $timeout( function(){
             $rootScope.initializePhysicalAutoComplete();
@@ -578,13 +554,24 @@ ExpediaHackathonAPP
                 $rootScope.roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
                 console.info('roomAmenities', $rootScope.roomAmenities);
 
+
                 $rootScope.viewType = ReviewAnalyser.getViewType(reviewKeywords);
                 console.info('viewType', $rootScope.viewType);
                 
                 $rootScope.PhysicalContactFormatted = $rootScope.PhysicalContact.Addresses.Address[0].AddressLine + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CityName + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CountryCode;
-
-                var geoLocationData = {};
+                
+                var geoLocationData = {
+                    subwayDist : $rootScope.subwaystation?$rootScope.subwaystation.distance:100000,
+                    subwayName : $rootScope.subwaystation?$rootScope.subwaystation.name:'',
+                    airportDist : $rootScope.airport?$rootScope.airport.distance:100000,
+                    airportName : $rootScope.airport?$rootScope.airport.name:'',
+                    trainStationDist : $rootScope.trainstation?$rootScope.trainstation.distance:100000,
+                    trainStationName : $rootScope.trainstation?$rootScope.trainstation.name:'',
+                    activities : $rootScope.activitiesFound,
+                    poi : $rootScope.foundPOI
+                };
                 $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.hotelname, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
+
                 console.info('propertyDescription', $rootScope.propertyDescription);
             
             });
