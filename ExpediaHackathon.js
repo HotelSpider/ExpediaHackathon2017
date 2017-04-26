@@ -559,6 +559,7 @@ ExpediaHackathonAPP
         };
         uploader.onCompleteAll = function() {
             console.info('onCompleteAll');
+            console.log('mediatags', $rootScope.mediaTags);
             
             var amenities = ImageTagging.getAmenities($rootScope.airbnbid);
             
