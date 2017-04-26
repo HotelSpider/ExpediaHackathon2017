@@ -452,36 +452,11 @@ ExpediaHackathonAPP
             $rootScope.initializePhysicalAutoComplete();
         }, 1000);
 
-<<<<<<< HEAD
-        var mediaTags2 = ImageTagging.getMediaTags('9917391_01.jpg');
-        ImageTagging.getMediaTags('9917391_01.jpg');
-        ImageTagging.getMediaTags('9917391_02.jpg');
-        ImageTagging.getMediaTags('9917391_03.jpg');
-        ImageTagging.getMediaTags('9917391_04.jpg');
-        ImageTagging.getMediaTags('9917391_05.jpg');
-        ImageTagging.getMediaTags('9917391_06.jpg');
-        ImageTagging.getMediaTags('9917391_07.jpg');
-        ImageTagging.getMediaTags('9917391_08.jpg');
-        ImageTagging.getMediaTags('9917391_09.jpg');
-        ImageTagging.getMediaTags('9917391_10.jpg');
-        ImageTagging.getMediaTags('9917391_11.jpg');
-        ImageTagging.getMediaTags('9917391_12.jpg');
-        ImageTagging.getMediaTags('9917391_13.jpg');
-        ImageTagging.getMediaTags('9917391_14.jpg');
-        ImageTagging.getMediaTags('9917391_15.jpg');
-        ImageTagging.getMediaTags('9917391_16.jpg');
-        ImageTagging.getMediaTags('9917391_17.jpg');
-        ImageTagging.getMediaTags('9917391_18.jpg');
 
-        console.info('mediaTags', mediaTags2);
-
-        var amenities = ImageTagging.getAmenities('9917391');
-=======
         /*var mediaTags2 = ImageTagging.getMediaTags('2280482_01.jpg');
         console.info('mediaTags', mediaTags2);*/
 
         /*var amenities = ImageTagging.getAmenities('2280482');
->>>>>>> Routine
         console.info('amenities', amenities);
 
         var reviewKeywords = ReviewAnalyser.analyseReviews('9917391');
@@ -504,12 +479,9 @@ ExpediaHackathonAPP
         /*var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
         console.info('propertyDescription', propertyDescription);*/
 
-<<<<<<< HEAD
-        $rootScope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
 
-=======
         $rootScope.airbnburl = 'https://www.airbnb.fr/rooms/9917391';
->>>>>>> Routine
+
         $rootScope.mediaTags = [];
         $rootScope.amenities = [];
         //$rootScope.mediaTags.push(mediaTags2);
