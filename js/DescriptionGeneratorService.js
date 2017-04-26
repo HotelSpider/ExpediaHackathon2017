@@ -48,14 +48,16 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
             description += '\n' + propertyName + ' is ideally located near ';
             for (var i = 0; i < location.length; i++) {
                 description += location[i];
-                if (location.length > 2) {
-                    if (i != location.length - 1) {
-                        description += ', ';
+                if (i != location.length) {
+                    if (location.length > 2) {
+                        if (i != location.length - 1) {
+                            description += ', ';
+                        } else {
+                            description += ' and ';
+                        }
                     } else {
                         description += ' and ';
                     }
-                } else {
-                    description += ' and ';
                 }
             }
             description += '.\n';
