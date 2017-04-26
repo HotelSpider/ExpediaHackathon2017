@@ -28,8 +28,10 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
                 'COTTAGE'
             ];
 
-            if (keywords.Miscellaneous.hasOwnProperty('apartment')) {
-                return 'APARTMENT';
+            if ((typeof keywords !== 'undefined') && (typeof keywords.Miscellaneous !== 'undefined')) {
+                if (keywords.Miscellaneous.hasOwnProperty('apartment')) {
+                    return 'APARTMENT';
+                }
             }
 
             return 'HOTEL';
