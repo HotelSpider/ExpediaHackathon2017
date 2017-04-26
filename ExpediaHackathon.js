@@ -45,6 +45,8 @@ ExpediaHackathonAPP
         $rootScope.step = 1;
         
         $rootScope.airbnbid = '9917391';
+        
+        $rootScope.hotelname = 'Cosy appartement close to Eiffel Tower';
 
         var autocomplete;
 
@@ -535,7 +537,7 @@ ExpediaHackathonAPP
             console.info('amenities', amenities);
             
             var prom = ReviewAnalyser.analyseReviews($rootScope.airbnbid);
-            console.log($rootScope.hotelname);
+            
             prom.then(function (reviewKeywords) {
                 console.info('reviewKeywords', reviewKeywords);
     
