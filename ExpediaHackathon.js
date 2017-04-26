@@ -534,6 +534,8 @@ ExpediaHackathonAPP
             var amenities = ImageTagging.getAmenities($rootScope.airbnbid);
             console.info('amenities', amenities);
             
+            $rootScope.hotelname2 = $rootScope.hotelname;
+            
             var prom = ReviewAnalyser.analyseReviews($rootScope.airbnbid);
             
             prom.then(function (reviewKeywords) {
