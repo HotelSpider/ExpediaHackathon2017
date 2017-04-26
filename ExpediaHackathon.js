@@ -575,7 +575,7 @@ ExpediaHackathonAPP
             console.info('roomAmenities', $rootScope.roomAmenities);
 
             var geoLocationData = {};
-            $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
+            $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
             console.info('propertyDescription', $rootScope.propertyDescription);
             
             $timeout( function(){ $rootScope.EngagingAnalysis = false; }, 10000 );
