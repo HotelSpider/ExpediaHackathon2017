@@ -563,24 +563,26 @@ ExpediaHackathonAPP
             console.log('mediatags', $rootScope.mediaTags);
             
             var amenities = ImageTagging.getAmenities($rootScope.airbnbid);
+            console.info('amenities', amenities);
             
-            var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
-            console.info('reviewKeywords', reviewKeywords);
+            var prom = ReviewAnalyser.analyseReviews($rootScope.airbnbid);
+            prom.then(function (reviewKeywords) {
+                var reviewKeywords = 
+                console.info('reviewKeywords', reviewKeywords);
     
-            $rootScope.propertyType = ReviewAnalyser.getPropertyType(reviewKeywords).toUpperCase();
-            console.info('propertyType', $rootScope.propertyType);
-            
-            
-    
-            $rootScope.propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
-            console.info('propertyAmenities', $rootScope.propertyAmenities);
-    
-            $rootScope.roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
-            console.info('roomAmenities', $rootScope.roomAmenities);
+                $rootScope.propertyType = ReviewAnalyser.getPropertyType(reviewKeywords).toUpperCase();
+                console.info('propertyType', $rootScope.propertyType);
 
-            var geoLocationData = {};
-            $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
-            console.info('propertyDescription', $rootScope.propertyDescription);
+                $rootScope.propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
+                console.info('propertyAmenities', $rootScope.propertyAmenities);
+    
+                $rootScope.roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
+                console.info('roomAmenities', $rootScope.roomAmenities);
+
+                var geoLocationData = {};
+                $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
+                console.info('propertyDescription', $rootScope.propertyDescription);
+            });
             
             $timeout( function(){ $rootScope.EngagingAnalysis = false; }, 10000 );
             
