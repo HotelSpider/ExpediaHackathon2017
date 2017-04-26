@@ -17,12 +17,13 @@ ExpediaHackathonAPP
     .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
 
         $rootScope.featuredAmenityEnum = featuredAmenitiesFullList;
+        $rootScope.roomAmenities = roomAmenitiesFullList;
 
         $rootScope.viewEnum = viewsFullList;
         
         $rootScope.startAnalysis = true;
         
-        $rootScope.step = 1;
+        $rootScope.step = 3;
 
         var autocomplete;
 
