@@ -240,9 +240,7 @@ ExpediaHackathonAPP
                 angular.forEach(publictransports, function(place, placeIndex){
                     angular.forEach(place.types, function(type, indexType){
                         if(type == 'train_station' && !trainstationFound){
-                            trainstationFound = true;
-console.log(place);
-                            
+                            trainstationFound = true;                            
                             var latitude2 = parseFloat(place.geometry.location.lat());
                             var longitude2 = parseFloat(place.geometry.location.lng());
 
