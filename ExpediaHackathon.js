@@ -136,13 +136,6 @@ ExpediaHackathonAPP
                 $rootScope.getGooglePOI();
 
                 $rootScope.getNearByPublicTransportation();
-                $rootScope.processPOI();
-
-                var geoLocationData = $rootScope.neighborhood.name;
-                console.info('geoLocationData', geoLocationData);
-
-                var POI = $rootScope.classifiedPOI;
-                console.info('geoLocationData', POI);
 
             });
 
