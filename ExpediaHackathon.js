@@ -451,7 +451,7 @@ ExpediaHackathonAPP
         };
         uploader.onBeforeUploadItem = function(item) {
             console.info('onBeforeUploadItem', item);
-            $rootScope.startAnalysis = true;
+            $rootScope.EngagingAnalysis = true;
         };
         uploader.onProgressItem = function(fileItem, progress) {
             console.info('onProgressItem', fileItem, progress);
@@ -479,6 +479,9 @@ ExpediaHackathonAPP
         };
         uploader.onCompleteAll = function() {
             console.info('onCompleteAll');
+            
+            $timeout( function(){ $rootScope.EngagingAnalysis = false; }, 10000 );
+            
         };
 
         console.info('uploader', uploader);

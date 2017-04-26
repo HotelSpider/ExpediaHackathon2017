@@ -31,14 +31,14 @@
 	</head>
 	<body ng-controller="uploadController">
       
-      <div id="explanation">
+      <div id="explanation" ng-show="EngagingAnalysis">
         <ul class="list-unstyled">
           <li><img src="loader.gif" /> Uploading photos</li>
           <li><img src="loader.gif" /> Analysing photos with MTS</li>
           <li><img src="loader.gif" /> Sorting photos with MTS</li>
           <li><img src="loader.gif" /> Finding POI with TCS and Google API</li>
-          <li><img src="loader.gif" /> Analysing reviews in Airbnb with Exp MLP : extracting amenites and other informations</li>
-          <li><img src="loader.gif" /> Auto completing content</li>
+          <li><img src="loader.gif" /> Analysing reviews from Airbnb with Expedia NLP : extracting amenites and other information</li>
+          <li><img src="loader.gif" /> Generating and autocompleting content</li>
       </div>
       
       <nav id="myNavBar" class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
@@ -173,7 +173,7 @@
 
 						<div>
 							<div ng-show="uploader.isHTML5">
-								<div class="well my-drop-zone" nv-file-over="" uploader="uploader" style="height: 200px">Base drop zone</div>
+								<div class="well my-drop-zone" nv-file-over="" uploader="uploader" style="height: 200px">Drop your photos here !</div>
 							</div>
 							<!-- Example: nv-file-select="" uploader="{Object}" options="{Object}" filters="{String}" -->
 							<input type="file" nv-file-select="" uploader="uploader" multiple />
