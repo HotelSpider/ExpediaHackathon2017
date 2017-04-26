@@ -2,7 +2,7 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
     .service('ReviewAnalyser', function ($http) {
 
         this.analyseReviews = function (hotelCode) {
-            $http({
+            return $http({
                 method: 'GET',
                 url: 'http://35.158.79.41/ExpediaHackathon2017/getReviewsKeywords.php?HotelCode=' + hotelCode
             }).then(function successCallback(response) {
@@ -29,10 +29,10 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
             ];
 
             if (keywords.Miscellaneous.hasOwnProperty('apartment')) {
-                return 'apartment';
+                return 'APARTMENT';
             }
 
-            return hotel;
+            return 'HOTEL';
         }
 
         this.getViewType = function (keywords) {
