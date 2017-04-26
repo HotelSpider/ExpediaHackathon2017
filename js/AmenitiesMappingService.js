@@ -51,14 +51,14 @@ var AmenitiesMappingService = angular.module('AmenitiesMappingService', [])
                 angular.forEach(amenities, function (a) {
                     if (keywords.indexOf(a) > -1) {
                         removeFromArray(unusedAmenities, a);
-                        propertyAmenities.push(amenity);
+                        propertyAmenities[amenity] = 1;
                     }
                 });
 
                 for (var keyword in reviewKeywords.Property) {
                     if (keywords.indexOf(keyword) > -1) {
                         removeFromArray(unusedKeywords, keyword);
-                        propertyAmenities.push(amenity);
+                        propertyAmenities[amenity] = 1;
                     }
                 }
             }
@@ -84,14 +84,14 @@ var AmenitiesMappingService = angular.module('AmenitiesMappingService', [])
                 angular.forEach(amenities, function (a) {
                     if (keywords.indexOf(a) > -1) {
                         removeFromArray(unusedAmenities, a);
-                        roomAmenities.push(amenity);
+                        roomAmenities[amenity] = 1;
                     }
                 });
 
                 for (var keyword in reviewKeywords.Room) {
                     if (keywords.indexOf(keyword) > -1) {
                         removeFromArray(unusedKeywords, keyword);
-                        roomAmenities.push(amenity);
+                        roomAmenities[amenity] = 1;
                     }
                 }
             }
