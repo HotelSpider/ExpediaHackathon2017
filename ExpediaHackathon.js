@@ -107,6 +107,13 @@ ExpediaHackathonAPP
             );
             google.maps.event.addListener(autocomplete, 'place_changed', function() {
                 $rootScope.fillInAddress('Physical');
+
+                var geoLocationData = $rootScope.neighborhood.name;
+                console.info('geoLocationData', geoLocationData);
+
+                var POI = $rootScope.classifiedPOI;
+                console.info('geoLocationData', POI);
+
             });
 
             $timeout( function() {
@@ -139,11 +146,7 @@ ExpediaHackathonAPP
                     draggable: false
                 });
             }
-            else {
-                marker.setPosition(myLatlng);
-                $scope.hotel.Latitude = lat;
-                $scope.hotel.Longitude = lng;
-            }
+            marker.setPosition(myLatlng);
             $timeout( function(){ map.setCenter(marker.getPosition()); }, 1000 );
             map.setZoom(16);//zoom to marker
         };
@@ -161,7 +164,7 @@ ExpediaHackathonAPP
             var service = new google.maps.places.PlacesService(map);
             
                 service.nearbySearch(request, function(trainstations){
-                $rootScope.getNearByTrainStation = trainstations;
+                $rootScope.nearByTrainStation = trainstations;
             });
         };
 
@@ -316,7 +319,7 @@ ExpediaHackathonAPP
 
             //GOOGLE POI
             angular.forEach($rootScope.foundPOI, function (POI, indexPOI){
-                angular.forEach(PO.types, function(type, indexType){
+                angular.forEach(POI.types, function(type, indexType){
                     if(typeof $rootScope.classifiedPOI[type] === 'undefined'){
                          $rootScope.classifiedPOI[type.toLowerCase()] = []
                     }  
@@ -627,14 +630,13 @@ ExpediaHackathonAPP
         var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
         console.info('reviewKeywords', reviewKeywords);
 
-        var geoLocationData = {};
-        console.info('geoLocationData', geoLocationData);
-
         var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
         console.info('propertyAmenities', propertyAmenities);
 
         var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
         console.info('roomAmenities', roomAmenities);
+
+        var geoLocationData = {};
 
         var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
         console.info('propertyDescription', propertyDescription);
