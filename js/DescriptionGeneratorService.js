@@ -1,8 +1,52 @@
 var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', [])
     .service('DescriptionGenerator', function () {
 
-        this.getPropertyDescription = function (propertyName, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData) {
-            return 'No description yet';
+        var removeFromArray = function (arr) {
+            var what, a = arguments, L = a.length, ax;
+            while (L > 1 && arr.length) {
+                what = a[--L];
+                while ((ax = arr.indexOf(what)) !== -1) {
+                    arr.splice(ax, 1);
+                }
+            }
+            return arr;
+        }
+
+        var getLocation = function (locationKeywords) {
+            var location = [];
+            if (typeof locationKeywords != 'undefined') {
+                if (locationKeywords.hasOwnProperty('eiffeltower')) {
+                    location.push('Eiffel Tower');
+                }
+                if (locationKeywords.hasOwnProperty('montparnasse')) {
+                    location.push('Montparnasse');
+                }
+                if (locationKeywords.hasOwnProperty('subway') || locationKeywords.hasOwnProperty('metro')) {
+                    location.push('Subway');
+                }
+            }
+            return location;
+        }
+
+        this.getPropertyDescription = function (propertyName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData) {
+
+            var location = getLocation(reviewKeywords.Location);
+
+            var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped {amenities}.\n';
+
+            // subway access
+            if ((geoLocationData.subwayDist < 200) || (location.indexOf('Subway') > -1)) {
+                description += '\nDirectly accessible with the subway, it is located at only ' + geoLocationData.subwayDist + 'm from the ' + geoLocationData.subwayName + ' station.\n';
+            }
+
+            // furniture
+            description += '\nThe ' + propertyType + ' is in a contemporary décor with country-style furniture. It is equipped with free Wi-Fi access, a flat-screen TV and a private bathroom.\n';
+
+            // location
+            removeFromArray(location, 'Subway');
+            description += '\n' + propertyName + ' is ideally located near ' + location.join();
+
+            return description;
         };
 
         /*

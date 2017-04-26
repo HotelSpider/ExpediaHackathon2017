@@ -27,6 +27,7 @@ var AmenitiesMappingService = angular.module('AmenitiesMappingService', [])
         // init mapping
         propertyAmenitiesLUT['Terrace'] = ['terrace'];
 
+        roomAmenitiesLUT['Terrace'] = ['terrace'];
         roomAmenitiesLUT['Microwave'] = ['microwave'];
 
         // public methods

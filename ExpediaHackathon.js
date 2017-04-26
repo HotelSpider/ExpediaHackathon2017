@@ -14,7 +14,7 @@ var ExpediaHackathonAPP = angular.module('ExpediaHackathon', [
 
 ExpediaHackathonAPP
 
-    .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout) {
+    .run(function ($rootScope, $location, $http, $uibModal, $interval, $timeout, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
 
         $rootScope.featuredAmenityEnum = featuredAmenitiesFullList;
 
@@ -403,6 +403,32 @@ ExpediaHackathonAPP
         $timeout( function(){
             $rootScope.initializePhysicalAutoComplete();
         }, 1000);
+
+        var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
+        console.info('mediaTags', mediaTags);
+
+        var amenities = ImageTagging.getAmenities('2280482');
+        console.info('amenities', amenities);
+
+        var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
+        console.info('reviewKeywords', reviewKeywords);
+
+        var propertyType = ReviewAnalyser.getPropertyType(reviewKeywords);
+        console.info('propertyType', propertyType);
+
+        var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
+        console.info('propertyAmenities', propertyAmenities);
+
+        var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
+        console.info('roomAmenities', roomAmenities);
+
+        var geoLocationData = {};
+
+        var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyType, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
+        console.info('propertyDescription', propertyDescription);
+
+        $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
+        $scope.mediaTags.push(mediaTags);
     })
     .config(function($httpProvider, $base64) {
         var auth = $base64.encode("EQCtest12933870:ew67nk33");
@@ -695,30 +721,6 @@ ExpediaHackathonAPP
                 "Beach View"
             ]
         };
-        
-        $scope.airbnburl = 'https://www.airbnb.fr/rooms/1984135?location=Paris&s=3PCC-baj';
-        
-
-        var mediaTags = ImageTagging.getMediaTags('2280482_01.jpg');
-        $scope.mediaTags.push(mediaTags);
-        console.info('mediaTags', mediaTags);
-
-        var amenities = ImageTagging.getAmenities('2280482');
-        console.info('amenities', amenities);
-
-        var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
-        console.info('reviewKeywords', reviewKeywords);
-
-        var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
-        console.info('propertyAmenities', propertyAmenities);
-
-        var roomAmenities = AmenitiesMapper.getRoomAmenities(amenities, reviewKeywords);
-        console.info('roomAmenities', roomAmenities);
-
-        var geoLocationData = {};
-
-        var propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, propertyAmenities, roomAmenities, reviewKeywords, geoLocationData);
-        console.info('propertyDescription', propertyDescription);
     }])
     .directive('ngThumb', ['$window', function($window) {
         var helper = {
