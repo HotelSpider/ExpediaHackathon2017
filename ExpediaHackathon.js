@@ -405,17 +405,39 @@ ExpediaHackathonAPP
             $rootScope.initializePhysicalAutoComplete();
         }, 1000);
 
-        var mediaTags2 = ImageTagging.getMediaTags('2280482_01.jpg');
+        var mediaTags2 = ImageTagging.getMediaTags('9917391_01.jpg');
+        ImageTagging.getMediaTags('9917391_01.jpg');
+        ImageTagging.getMediaTags('9917391_02.jpg');
+        ImageTagging.getMediaTags('9917391_03.jpg');
+        ImageTagging.getMediaTags('9917391_04.jpg');
+        ImageTagging.getMediaTags('9917391_05.jpg');
+        ImageTagging.getMediaTags('9917391_06.jpg');
+        ImageTagging.getMediaTags('9917391_07.jpg');
+        ImageTagging.getMediaTags('9917391_08.jpg');
+        ImageTagging.getMediaTags('9917391_09.jpg');
+        ImageTagging.getMediaTags('9917391_10.jpg');
+        ImageTagging.getMediaTags('9917391_11.jpg');
+        ImageTagging.getMediaTags('9917391_12.jpg');
+        ImageTagging.getMediaTags('9917391_13.jpg');
+        ImageTagging.getMediaTags('9917391_14.jpg');
+        ImageTagging.getMediaTags('9917391_15.jpg');
+        ImageTagging.getMediaTags('9917391_16.jpg');
+        ImageTagging.getMediaTags('9917391_17.jpg');
+        ImageTagging.getMediaTags('9917391_18.jpg');
+
         console.info('mediaTags', mediaTags2);
 
-        var amenities = ImageTagging.getAmenities('2280482');
+        var amenities = ImageTagging.getAmenities('9917391');
         console.info('amenities', amenities);
 
-        var reviewKeywords = ReviewAnalyser.analyseReviews('2280482');
+        var reviewKeywords = ReviewAnalyser.analyseReviews('9917391');
         console.info('reviewKeywords', reviewKeywords);
 
         var propertyType = ReviewAnalyser.getPropertyType(reviewKeywords);
         console.info('propertyType', propertyType);
+
+        var viewType = ReviewAnalyser.getViewType(reviewKeywords);
+        console.info('viewType', viewType);
 
         var propertyAmenities = AmenitiesMapper.getPropertyAmenities(amenities, reviewKeywords);
         console.info('propertyAmenities', propertyAmenities);
@@ -451,12 +473,6 @@ ExpediaHackathonAPP
         var uploader = $scope.uploader = new FileUploader({
             url: 'upload.php'
         });
-<<<<<<< b65a787bb384c90d9dff065b9a72b16fcf4bfd95
-            
-            
-        
-=======
->>>>>>> Expose property amenities to the view
 
         // FILTERS
 

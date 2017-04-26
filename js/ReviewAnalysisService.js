@@ -13,7 +13,7 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
             //});
 
             // DEBUG
-            return JSON.parse('{"Miscellaneous":{"apartment":9,"location":7,"place":4,"trip":3,"stay":2,"accommodation":1,"neighborhood":1},"Room":{"view":22,"bathroom":2,"windows":1,"views":1,"kitchen":1,"fridge":1,"microwave":1,"washer":1},"Location":{"tower":3,"metro":2,"station":2,"space":1,"Eiffel":1,"Tower":1,"eiffel":1,"of":1,"Montparnasse":1,"I\u00e9na":1,"subway":1,"sparkle":1,"stop":1,"city":1},"Property":{"apartment":2,"check":2,"in":2,"cleanliness":2,"d\u00e9cor":1,"Decor":1,"office":1,"buildings":1,"supplies":1,"decor":1,"host":1}}');
+            return JSON.parse('{"Miscellaneous":{"accommodation":1,"neighborhood":1,"apartment":9,"location":7,"place":4,"stay":2,"trip":3},"Room":{"microwave":1,"bathroom":2,"windows":1,"kitchen":1,"washer":1,"fridge":1,"views":1,"view":38},"Location":{"towersparkle":1,"montparnasse":1,"metrostation":1,"eiffeltower":2,"metrostop":1,"station":1,"eiffel":1,"subway":1,"space":1,"tower":3,"city":1,"ina":1,"of":1},"Property":{"officebuildings":1,"cleanliness":3,"apartment":2,"supplies":1,"checkin":1,"check":1,"decor":2,"dcor":1,"host":1,"in":2}}');
         };
 
         this.getPropertyType = function (keywords) {
@@ -33,5 +33,13 @@ var ReviewAnalysisService = angular.module('ReviewAnalysisService', [])
             }
 
             return hotel;
+        }
+
+        this.getViewType = function (keywords) {
+            if (keywords.Room.hasOwnProperty('view') || keywords.Room.hasOwnProperty('views') || keywords.Property.hasOwnProperty('view') || keywords.Property.hasOwnProperty('views')) {
+                if (keywords.Location.hasOwnProperty('city')) {
+                    return 'City View';
+                }
+            }
         }
     });

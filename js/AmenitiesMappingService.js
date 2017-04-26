@@ -29,6 +29,7 @@ var AmenitiesMappingService = angular.module('AmenitiesMappingService', [])
 
         roomAmenitiesLUT['Terrace'] = ['terrace'];
         roomAmenitiesLUT['Microwave'] = ['microwave'];
+        roomAmenitiesLUT['Refrigerator'] = ['fridge'];
 
         // public methods
         this.getPropertyAmenities = function (amenities, reviewKeywords) {
