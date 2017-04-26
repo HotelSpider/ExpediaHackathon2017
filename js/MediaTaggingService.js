@@ -30,7 +30,7 @@
             var imgFilenameRoot = imgFilename.split('.')[0];
             var propId = imgFilenameRoot.split('_')[0];
 
-            $http({
+            return $http({
                 method: 'GET',
                 url: 'http://35.158.79.41/ExpediaHackathon2017/resources/api_responses/expedia/media_tagging_service/' + propId + '/' + imgFilenameRoot + '.json'
             }).then(function successCallback(response) {
