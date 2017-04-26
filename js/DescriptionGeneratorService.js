@@ -33,17 +33,8 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
             var location = getLocation(reviewKeywords.Location);
             propertyType = propertyType.toLowerCase();
 
-            var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped ' ;
-            amenitiesSTR = '';
-            angular.forEach(propertyAmenities, function(amenity, nameAmenity){
-                if(amenitiesSTR == ''){
-                    amenitiesSTR = nameAmenity;
-                }else{
-                    amenitiesSTR += ', ' + nameAmenity;
-                }
-            });
-
-            description += amenitiesSTR;
+            var description = propertyName + ' sits in the heart of ' + geoLocationData.neighborhoodName + ' in ' + geoLocationData.cityName + '. It offers ' + propertyType + ' with fully equipped Free Wifi and Free parking' ;
+            
             description +='.\n';
 
             // subway access
