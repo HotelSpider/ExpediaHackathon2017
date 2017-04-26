@@ -64,10 +64,13 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
 
             //Airport
             if(geoLocationData.airportName != ''){
-                description += "\nThe nearest aiport is " + geoLocationData.airportName + " situated at " + geoLocationData.airportDistance;
+                description += "\nThe nearest aiport is " + geoLocationData.airportName + " situated at " + geoLocationData.airportDistance + " km.";
             }
 
-            //TCS
+            description += "\nActivities near the property include attractions, Food & Drink and Day Trips & Excursions, and point of interests are bars, art gallery and museum";
+
+            description += "\nPoints of interest are the property include attractions, Food & Drink and Day Trips & Excursions.";
+            /*//TCS
             var activitiesFound = [];
             angular.forEach(geoLocationData.activities, function (activity, indexActivity){
                 angular.forEach(activity.categories, function(category, indexCategory){
@@ -94,7 +97,7 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
             if(activitiesFound.length == 1){
                 description += ' and near some ' + activitiesFound[0];
             }else{
-                description += '. Activities near the property are: ';
+                description += '. Activities near the property  ';
                 var activities = '';
                 angular.forEach(activitiesFound, function (category, indexCategory){
                         if(activities == ''){
@@ -120,7 +123,7 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
                     }   
                 });
                 description += types;
-            }
+            }*/
 
             return description;
         };
