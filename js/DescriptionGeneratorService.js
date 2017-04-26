@@ -58,7 +58,7 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
                     if(typeof activitiesFound[category] === 'undefined'){
                         activitiesFound[category.toLowerCase()] = []
                     }  
-                    activitiesFound[category.toLowerCase()].push(POI);
+                    activitiesFound[category.toLowerCase()].push(category);
                 });
                
             });
@@ -82,9 +82,9 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
                 var activities = '';
                 angular.forEach(activitiesFound, function (category, indexCategory){
                         if(activities == ''){
-                            activities = category;
+                            activities = indexCategory;
                         }else{
-                            activities += ', ' + category;
+                            activities += ', ' + indexCategory;
                         }  
                 });
                 description += activities;
@@ -98,9 +98,9 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
                 var types = '';
                 angular.forEach(classifiedPOI, function(type, indexCategory){
                     if(types == ''){
-                        types = type;
+                        types = indexCategory;
                     }else{
-                        types += ', ' + type;
+                        types += ', ' + indexCategory;
                     }   
                 });
                 description += types;
