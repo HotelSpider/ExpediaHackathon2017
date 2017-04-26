@@ -194,6 +194,7 @@ ExpediaHackathonAPP
 
             var neighborhoodFound = null;
             var city = 'Madrid';
+            var regionId = 178293;
             var minDistance = -1;
             var Address = $rootScope.PhysicalContact.Addresses.Address[0];
 
@@ -203,6 +204,7 @@ ExpediaHackathonAPP
                     minDistance = currentDistance;
                     neighborhoodFound = neighborhood;
                     city = 'Madrid';
+                    regionId = 178293;
                 }
             });
 
@@ -213,6 +215,7 @@ ExpediaHackathonAPP
                     minDistance = currentDistance;
                     neighborhoodFound = neighborhood;
                     city = 'Paris';
+                    regionId = 179898;
                 }
             });
 
@@ -221,16 +224,19 @@ ExpediaHackathonAPP
                 if(minDistance < 0 || minDistance > currentDistance){
                     minDistance = currentDistance;
                     neighborhoodFound = neighborhood;
-                    city = 'NewYork';
+                    city = 'New York';
+                    regionId = 178293;
                 }
             });
 
             $rootScope.neighborhood = neighborhoodFound;
 
-            //Get the TCS Activities
+            var cityActivities = [];
+          
+            //Get the TCS Activities for the city and split the content per region
             $http({
                 method:'GET',
-                url:'https://services.expediapartnercentral.com/travel-content/service/travel/id/'+$rootScope.neighborhood.id+'?section=ACTIVITY&langId=EN&version=2&useCache=true'
+                url:'https://services.expediapartnercentral.com/travel-content/service/travel/regionId/' + regionId + '?langId=EN&sections=ACTIVITY&version=2&useCache=true'
             }).then(function(activities, status){
 
                  //Load the activities for the particular neighboorhood
@@ -239,10 +245,11 @@ ExpediaHackathonAPP
                 if(city == 'Madrid'){
                     activitiesDb = activitiesMadrid;
                 }else if (city == 'Paris'){
-                    activitiesDb = activitiesMadrid;
-                }else if(city == 'NewYork'){          
+                    activitiesDb = activitiesParis;
+                }else if(city == 'New York'){          
                     activitiesDb = activitiesNewYork;
                 }
+
 
                 //array id => activity
                 var cityActivities = {};
@@ -252,13 +259,14 @@ ExpediaHackathonAPP
                 });
 
                 angular.forEach(activities.data.sections.data, function(activity, indexActivity){
-                    if(typeof data.activity_id != 'undefined'){
+                    if(typeof data.activity_id != 'undefined' && distanceInKmBetweenEarthCoordinates(activity.destination.geo.latitude, activity.destination.geo.longitude, parseFloat(Address.Latitude), parseFloat(Address.Longitude))<= 0.5){
                         activitiesFound.push(cityActivities[activity.sections.activity.id]);
                     }                
                 });
 
                 $rootScope.activitiesFound = activitiesFound;
             });
+            
 
         };
 
@@ -307,16 +315,8 @@ ExpediaHackathonAPP
         }, 1000);
     })
     .config(function($httpProvider, $base64) {
-        var auth = $base64.encode("EQC16637524hotel:test1234Test!");
+        var auth = $base64.encode("EQCtest12933870:ew67nk33");
         $httpProvider.defaults.headers.common['Authorization'] = 'Basic ' + auth;
-    }).config(function($sceDelegateProvider) {
-      $sceDelegateProvider.resourceUrlWhitelist([
-        // Allow same origin resource loads.
-        'self',
-        // Allow loading from our assets domain.  Notice the difference between * and **.
-        'httphttps://maps.googleapis.com/**'
-      ]);
-
     })
     .controller('uploadController', ['$scope', '$location', '$uibModal', '$http', '$window', '$timeout', '$rootScope', 'FileUploader', 'ImageTagging', 'ReviewAnalyser', 'DescriptionGenerator', 'AmenitiesMapper',
         function ($scope, $location, $uibModal, $http, $window, $timeout, $rootScope, FileUploader, ImageTagging, ReviewAnalyser, DescriptionGenerator, AmenitiesMapper) {
