@@ -83,7 +83,7 @@ ExpediaHackathonAPP
             $rootScope.getGooglePOI();
             $rootScope.getNearByAirport();
             $rootScope.getNearByTrainStation();
-
+            $rootScope.processPOI();
 
             $timeout( function(){ $('.physicalautocompleteresult').show() }, 300);
 
@@ -306,6 +306,33 @@ ExpediaHackathonAPP
                 });
 
                 $rootScope.foundPOI = foundPOI;
+            });
+
+        };
+
+        $rootScope.classifiedPOI = {};
+        $rootScope.processPOI = function(){
+
+
+            //GOOGLE POI
+            angular.forEach($rootScope.foundPOI, function (POI, indexPOI){
+                angular.forEach(PO.types, function(type, indexType){
+                    if(typeof $rootScope.classifiedPOI[type] === 'undefined'){
+                         $rootScope.classifiedPOI[type.toLowerCase()] = []
+                    }  
+                    $rootScope.classifiedPOI[type.toLowerCase()].push(POI);
+                });
+            });
+
+            //TCS
+            angular.forEach($rootScope.activitiesFound, function (activity, indexActivity){
+                angular.forEach(activity.categories, function(category, indexCategory){
+                    if(typeof $rootScope.classifiedPOI[type] === 'undefined'){
+                     $rootScope.classifiedPOI[category.toLowerCase()] = []
+                    }  
+                    $rootScope.classifiedPOI[category.toLowerCase()].push(POI);
+                });
+               
             });
 
         };
