@@ -581,6 +581,8 @@ ExpediaHackathonAPP
                 $rootScope.viewType = ReviewAnalyser.getViewType(reviewKeywords);
                 console.info('viewType', $rootScope.viewType);
                 
+                $rootScope.PhysicalContactFormatted = $rootScope.PhysicalContact.Addresses.Address[0].AddressLine + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CityName + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CountryCode;
+
                 var geoLocationData = {};
                 $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.hotelname, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
                 console.info('propertyDescription', $rootScope.propertyDescription);
