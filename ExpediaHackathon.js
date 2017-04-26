@@ -567,8 +567,7 @@ ExpediaHackathonAPP
             
             var prom = ReviewAnalyser.analyseReviews($rootScope.airbnbid);
             prom.then(function (reviewKeywords) {
-                var reviewKeywords = 
-                console.info('reviewKeywords', reviewKeywords);
+<                console.info('reviewKeywords', reviewKeywords);
     
                 $rootScope.propertyType = ReviewAnalyser.getPropertyType(reviewKeywords).toUpperCase();
                 console.info('propertyType', $rootScope.propertyType);
