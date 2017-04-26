@@ -246,7 +246,7 @@
                          
                         <div class="form-group">
 							<label>Property type</label>
-							<select class="form-control">
+							<select class="form-control" ng-model="propertyType">
                               <option value="HOTEL">HOTEL</option>
                               <option value="MOTEL">MOTEL</option>
                               <option value="APART_HOTEL">APART_HOTEL</option>
@@ -278,7 +278,7 @@
 						<div id="propertyPhotos">
 							 <h4>Property photos</h4>
                               <div ng-show="mediaTags">
-								<ul class="list-unstyled">
+								<ul class="list-unstyled list-inline">
 									<li ng-repeat="media in mediaTags" ng-if="media.type == 'property'">
 										<img ng-src="uploads/{{media.filename}}" width=150 />
 									</li>
@@ -290,7 +290,7 @@
                           <h4>Property description</h4>
                           <div>
                             <p>This description is automatically generated, feel free to edit :</p>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" ng-model="propertyDescription"></textarea>
                           </div>
                         </div>
                         
@@ -346,7 +346,7 @@
 							 <h4>Room photos</h4>
 
 							<div ng-show="mediaTags">
-								<ul>
+								<ul class="list-unstyled list-inline">
 									<li ng-repeat="media in mediaTags" ng-if="media.type != 'property'">
 										<img ng-src="uploads/{{media.filename}}" width=150 />
 									</li>
