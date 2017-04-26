@@ -48,7 +48,7 @@ ExpediaHackathonAPP
 
         var autocomplete;
 
-        $rootScope.HotelName = '';
+        $rootScope.hotelname = '';
 
         $rootScope.PhysicalContact = {
             Addresses : {
@@ -579,7 +579,7 @@ ExpediaHackathonAPP
                 console.info('roomAmenities', $rootScope.roomAmenities);
 
                 var geoLocationData = {};
-                $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.HotelName, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
+                $rootScope.propertyDescription = DescriptionGenerator.getPropertyDescription($rootScope.hotelname, $rootScope.propertyType, $rootScope.propertyAmenities, $rootScope.roomAmenities, reviewKeywords, geoLocationData);
                 console.info('propertyDescription', $rootScope.propertyDescription);
             });
             

@@ -3,49 +3,49 @@
 
 	<head>
 		<title>Hotel-Spider - Expedia Hackathon 2017</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
-        <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-        <link href="bstheme.min.css" rel="stylesheet" />
-        <link href="style.css" rel="stylesheet" />
-        <script src="node_modules/angular-file-upload/dist/angular-file-upload.min.js"></script>
-        <script src="node_modules/angular-base64/angular-base64.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places,geometry&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU" type="text/javascript" defer></script>
-        <script src="js/MediaTaggingService.js"></script>
-        <script src="js/ReviewAnalysisService.js"></script>
-        <script src="js/DescriptionGeneratorService.js"></script>
-        <script src="js/AmenitiesMappingService.js"></script>
-        <script src="resources/amenities.js"></script>
-        <script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
-        <script src="resources/neighborhood_178281_madrid.json"></script>
-        <script src="resources/neighborhood_179898_paris.json"></script>
-        <script src="resources/tcs_178281.json"></script>
-        <script src="resources/neighborhood_178293_new_york.json"></script>
-        <script src="resources/activity_categories_178281_madrid.json"></script>
-        <script src="resources/activity_categories_179898_paris.json"></script>
-        <script src="resources/activity_categories_178293_new_york.json"></script>
-        <script src="ExpediaHackathon.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-touch.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+		<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="bstheme.min.css" rel="stylesheet" />
+		<link href="style.css" rel="stylesheet" />
+		<script src="node_modules/angular-file-upload/dist/angular-file-upload.min.js"></script>
+		<script src="node_modules/angular-base64/angular-base64.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places,geometry&key=AIzaSyCUVSq6ZVL0LIYuRGkGcmCI0Fyv4BlvHwU" type="text/javascript" defer></script>
+		<script src="js/MediaTaggingService.js"></script>
+		<script src="js/ReviewAnalysisService.js"></script>
+		<script src="js/DescriptionGeneratorService.js"></script>
+		<script src="js/AmenitiesMappingService.js"></script>
+		<script src="resources/amenities.js"></script>
+		<script src="https://apis.google.com/js/api.js" type="text/javascript"></script>
+		<script src="resources/neighborhood_178281_madrid.json"></script>
+		<script src="resources/neighborhood_179898_paris.json"></script>
+		<script src="resources/tcs_178281.json"></script>
+		<script src="resources/neighborhood_178293_new_york.json"></script>
+		<script src="resources/activity_categories_178281_madrid.json"></script>
+		<script src="resources/activity_categories_179898_paris.json"></script>
+		<script src="resources/activity_categories_178293_new_york.json"></script>
+		<script src="ExpediaHackathon.js"></script>
 	</head>
 	<body ng-controller="uploadController">
-      
-      <div id="explanation" ng-show="EngagingAnalysis">
-        <ul class="list-unstyled">
-          <li><img src="loader.gif" /> Uploading photos</li>
-          <li><img src="loader.gif" /> Analysing photos with MTS</li>
-          <li><img src="loader.gif" /> Sorting photos with MTS</li>
-          <li><img src="loader.gif" /> Finding POI with TCS and Google API</li>
-          <li><img src="loader.gif" /> Analysing reviews from Airbnb with Expedia NLP : extracting amenites and other information</li>
-          <li><img src="loader.gif" /> Generating and autocompleting content</li>
-      </div>
-      
-      <nav id="myNavBar" class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-        Onboard a new property
-      </nav>
-      
+	  
+	  <div id="explanation" ng-show="EngagingAnalysis">
+		<ul class="list-unstyled">
+		  <li><img src="loader.gif" /> Uploading photos</li>
+		  <li><img src="loader.gif" /> Analysing photos with MTS</li>
+		  <li><img src="loader.gif" /> Sorting photos with MTS</li>
+		  <li><img src="loader.gif" /> Finding POI with TCS and Google API</li>
+		  <li><img src="loader.gif" /> Analysing reviews from Airbnb with Expedia NLP : extracting amenites and other information</li>
+		  <li><img src="loader.gif" /> Generating and autocompleting content</li>
+	  </div>
+	  
+	  <nav id="myNavBar" class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+		Onboard a new property
+	  </nav>
+	  
 		<div class="container" style="padding-top: 70px;">
 			<div class="row">
 				<div class="col-xs-12">
@@ -69,24 +69,24 @@
 					<div id="propertyInformation">
 						<div class="form-group">
 							<label>Property name</label>
-							<input type="text" class="form-control" ng-model="HotelName" />
+							<input type="text" class="form-control" ng-model="hotelname" />
 						</div>
 						<div class="form-group">
 							<label>Property address</label>
 							<input type="text" class="form-control" id="physicalautocomplete" placeholder="Enter your address" autocomplete="false" />
 						</div>
-                        <div class="row">
-                            <div class="col-xs-4">
-                                <label class="control-label">Latitude</label> <br/>
-                                <input ng-change="unsavedChanges('General')" type="text" class="text form-control" name="Latitude" ng-model="PhysicalContact.Addresses.Address[0].Latitude" disabled="disabled"/>
-                            </div>
-                            <div class="col-xs-4">
-                                <label class="control-label">Longitude</label> <br/>
-                                <input ng-change="unsavedChanges('General')" type="text" class="text form-control" name="Longitude" ng-model="PhysicalContact.Addresses.Address[0].Longitude" disabled="disabled"/>
-                            </div>
-                        </div>
-                        <div id="map-canvas" style="  height: 290px;  margin-top: 20px;  width: 100%;"></div>
-                        
+						<div class="row">
+							<div class="col-xs-4">
+								<label class="control-label">Latitude</label> <br/>
+								<input ng-change="unsavedChanges('General')" type="text" class="text form-control" name="Latitude" ng-model="PhysicalContact.Addresses.Address[0].Latitude" disabled="disabled"/>
+							</div>
+							<div class="col-xs-4">
+								<label class="control-label">Longitude</label> <br/>
+								<input ng-change="unsavedChanges('General')" type="text" class="text form-control" name="Longitude" ng-model="PhysicalContact.Addresses.Address[0].Longitude" disabled="disabled"/>
+							</div>
+						</div>
+						<div id="map-canvas" style="  height: 290px;  margin-top: 20px;  width: 100%;"></div>
+						
 						<div id="importComments" style="margin-top:25px">
 							 <h5>Analyse comments from</h5>
 
@@ -218,8 +218,8 @@
 										</td>
 										<td nowrap>
 											<!--<button type="button" class="btn btn-success btn-xs" ng-click="item.upload()" ng-disabled="item.isReady || item.isUploading || item.isSuccess">	<span class="glyphicon glyphicon-upload"></span> Upload</button>
-                                 <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">	<span class="glyphicon glyphicon-ban-circle"></span> Cancel</button>
-                                 <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">	<span class="glyphicon glyphicon-trash"></span> Remove</button>-->
+								 <button type="button" class="btn btn-warning btn-xs" ng-click="item.cancel()" ng-disabled="!item.isUploading">	<span class="glyphicon glyphicon-ban-circle"></span> Cancel</button>
+								 <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">	<span class="glyphicon glyphicon-trash"></span> Remove</button>-->
 										</td>
 									</tr>
 								</tbody>
@@ -244,21 +244,21 @@
 				<div class="tab-pane fade in" id="thrid" ng-class="{ 'active' : step == 3 }">
 					<div id="propertyInformation">
 						<h3>Property information</h3>
-                         
-                        <div class="form-group">
+						 
+						<div class="form-group">
 							<label>Property type</label>
 							<select class="form-control" ng-model="propertyType">
-                              <option value="HOTEL">HOTEL</option>
-                              <option value="MOTEL">MOTEL</option>
-                              <option value="APART_HOTEL">APART_HOTEL</option>
-                              <option value="BED_AND_BREAKFAST">BED_AND_BREAKFAST</option>
-                              <option value="INN">INN</option>
-                              <option value="APARTMENT">APARTMENT</option>
-                              <option value="CONDO">CONDO</option>
-                              <option value="COTTAGE">COTTAGE</option>
-                            </select>
+							  <option value="HOTEL">HOTEL</option>
+							  <option value="MOTEL">MOTEL</option>
+							  <option value="APART_HOTEL">APART_HOTEL</option>
+							  <option value="BED_AND_BREAKFAST">BED_AND_BREAKFAST</option>
+							  <option value="INN">INN</option>
+							  <option value="APARTMENT">APARTMENT</option>
+							  <option value="CONDO">CONDO</option>
+							  <option value="COTTAGE">COTTAGE</option>
+							</select>
 						</div>
-                        <div class="form-group">
+						<div class="form-group">
 							<label>Property name</label>
 							<input type="text" class="form-control" ng-model="HotelName" />
 						</div>
@@ -266,8 +266,8 @@
 							<label>Property address</label>
 							<input type="text" class="form-control" id="physicalautocomplete" placeholder="Enter your address" autocomplete="false" />
 						</div>
-                        
-                        <div class="form-group">
+						
+						<div class="form-group">
 							<ul class="list-inline">
 								<li ng-repeat="amen in featuredAmenityEnum">
 									<input type="checkbox" ng-model="HotelAmenities[ amen ]" ng-true-value="1" ng-false-value="0" />
@@ -278,7 +278,7 @@
 
 						<div id="propertyPhotos">
 							 <h4>Property photos</h4>
-                              <div ng-show="mediaTags">
+							  <div ng-show="mediaTags">
 								<ul class="list-unstyled list-inline">
 									<li ng-repeat="media in mediaTags track by $index" ng-if="media.type == 'property'">
 										<img ng-src="uploads/{{media.filename}}" width=150 />
@@ -286,63 +286,63 @@
 								</ul>
 							</div>
 						</div>
-                        
-                        <div id="propertyDescription">
-                          <h4>Property description</h4>
-                          <div>
-                            <p>This description is automatically generated, feel free to edit :</p>
-                            <textarea class="form-control" ng-model="propertyDescription"></textarea>
-                          </div>
-                        </div>
-                        
-                        <!-- <div id="propertyDescription">
+						
+						<div id="propertyDescription">
+						  <h4>Property description</h4>
+						  <div>
+							<p>This description is automatically generated, feel free to edit :</p>
+							<textarea class="form-control" ng-model="propertyDescription"></textarea>
+						  </div>
+						</div>
+						
+						<!-- <div id="propertyDescription">
 							 <h3>Property description</h3>
-                            <div id="activities">
-                                <div id="results"></div>
-                
-                                <h5>Nearby activities</h5>
-                                <div ng-repeat="activity in activitiesFound">
-                                    {{activity}}
-                                </div>
-                                <h5>Nearby POI</h5>
-                                <div ng-repeat="poi in foundPOI">
-                                    <b>{{poi.name}}</b> :
-                                    <div ng-repeat="type in poi.types">
-                                        {{type}}
-                                    </div>
-                                    <br/>
-                                </div>
-                            
-                            </div>
+							<div id="activities">
+								<div id="results"></div>
+				
+								<h5>Nearby activities</h5>
+								<div ng-repeat="activity in activitiesFound">
+									{{activity}}
+								</div>
+								<h5>Nearby POI</h5>
+								<div ng-repeat="poi in foundPOI">
+									<b>{{poi.name}}</b> :
+									<div ng-repeat="type in poi.types">
+										{{type}}
+									</div>
+									<br/>
+								</div>
+							
+							</div>
 						</div> -->
-                        
-                        
+						
+						
 						<!-- <div id="propertyPOI">
-                <h4>Property POI</h4>
-                
-              </div> -->
-                        
-                    </div>
-                    <hr />
-                    <div id="roomDescription2">
+				<h4>Property POI</h4>
+				
+			  </div> -->
+						
+					</div>
+					<hr />
+					<div id="roomDescription2">
 						<h2>Room description</h2>
 						<div class="form-group">
 							<label>View</label>
 							<select class="form-control" ng-model="PropertyRoom.views" ng-options="label for label in viewEnum"></select>
 						</div>
 						
-                        <div class="form-group">
-                          <label>Room amenities</label>
-                          <div class="form-group">
-                              <ul class="list-inline">
-                                  <li ng-repeat="amen in roomAmenities">
-                                      <input type="checkbox" ng-model="roomAmenitiesList[ amen ]" ng-true-value="1" ng-false-value="0" />
-                                      <label>{{amen}}</label>
-                                  </li>
-                              </ul>
-                          </div>
-                        </div>
-                        
+						<div class="form-group">
+						  <label>Room amenities</label>
+						  <div class="form-group">
+							  <ul class="list-inline">
+								  <li ng-repeat="amen in roomAmenities">
+									  <input type="checkbox" ng-model="roomAmenitiesList[ amen ]" ng-true-value="1" ng-false-value="0" />
+									  <label>{{amen}}</label>
+								  </li>
+							  </ul>
+						  </div>
+						</div>
+						
 						<div id="roomPhotos" ng-show="startAnalysis">
 							 <h4>Room photos</h4>
 
