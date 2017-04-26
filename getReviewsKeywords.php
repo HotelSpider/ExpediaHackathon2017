@@ -3,7 +3,7 @@
 if( in_array($_GET['HotelCode'], array('9917391', '2280482', '10275336')) ){
     
     $hotelcode = $_GET['HotelCode'];
-    
+    sleep(2);
     $json = file_get_contents(__DIR__ . '/resources/api_responses/expedia/hotel_review_analyser/'.$hotelcode.'/reviewsAnalysed.json');
     $json = json_decode($json, true);
     
