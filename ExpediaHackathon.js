@@ -554,6 +554,8 @@ ExpediaHackathonAPP
                 $rootScope.PhysicalContactFormatted = $rootScope.PhysicalContact.Addresses.Address[0].AddressLine + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CityName + ', ' + $rootScope.PhysicalContact.Addresses.Address[0].CountryCode;
                 
                 var geoLocationData = {
+                    neighborhoodName: $rootScope.neighborhood.name,
+                    cityName: $rootScope.PhysicalContact.Addresses.Address[0].CityName,
                     subwayDist : $rootScope.subwaystation?$rootScope.subwaystation.distance:100000,
                     subwayName : $rootScope.subwaystation?$rootScope.subwaystation.name:'',
                     airportDist : $rootScope.nearByAirport?$rootScope.nearByAirport.distance:100000,

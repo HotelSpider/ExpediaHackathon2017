@@ -36,7 +36,8 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
 
             // subway access
             if ((geoLocationData.subwayDist < 200) || (location.indexOf('Subway') > -1)) {
-                description += '\nDirectly accessible with the subway, it is located at only ' + geoLocationData.subwayDist + 'm from the ' + geoLocationData.subwayName + ' station.\n';
+                var subDistDisplay = (geoLocationData.subwayDist > 1000) ? parseFloat(Math.round(geoLocationData.subwayDist / 1000).toFixed(2)) + 'km' : geoLocationData.subwayDist + 'm';
+                description += '\nDirectly accessible with the subway, it is located at only ' + geoLocationData.subDistDisplay + ' from the ' + geoLocationData.subwayName + ' station.\n';
             }
 
             // furniture
@@ -44,7 +45,18 @@ var DescriptionGeneratorService = angular.module('DescriptionGeneratorService', 
 
             // location
             removeFromArray(location, 'Subway');
-            description += '\n' + propertyName + ' is ideally located near ' + location.join();
+            description += '\n' + propertyName + ' is ideally located near ';
+            for (var i = 0; i < location.length; i++) {
+                description += location[i];
+                if (location.length > 1) {
+                    if (i != location.length - 1) {
+                        description += ', ';
+                    } else {
+                        description += ' and ';
+                    }
+                }
+            }
+            description += '.\n';
 
             //Airport
             if(geoLocationData.airportName != ''){
