@@ -538,7 +538,9 @@ ExpediaHackathonAPP
         };
         uploader.onSuccessItem = function(fileItem, response, status, headers) {
             
-            $rootScope.mediaTags.push(ImageTagging.getMediaTags(fileItem.file.name));
+            var tmp = ImageTagging.getMediaTags(fileItem.file.name);
+            console.log(tmp);
+            $rootScope.mediaTags.push(tmp);
             console.info('onSuccessItem', fileItem, response, status, headers);
             
         };
